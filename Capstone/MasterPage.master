@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Capstone Project</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link type="text/css" rel="Stylesheet" href="App_Themes/MyStyleSheet.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="Content">
+    <%--Adds a banner to the header of the page--%>
+        <div class="header">
+           <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
+           <asp:Button ID="btnHome" runat="server" Text="Home" BackColor="#3399FF" 
+                BorderColor="White" BorderStyle="Solid" ForeColor="Black" Width="127px" />
+            <asp:Button ID="btnProduct" runat="server" Text="Jerseys" BackColor="#3399FF" 
+                BorderColor="White" ForeColor="Black" Width="137px" BorderStyle="Solid" />
+            <asp:TextBox ID="txtSearch" runat="server" style="margin-bottom: 0px" 
+                Width="564px"></asp:TextBox>
+            <asp:ImageButton ID="ibtnSearch" runat="server" 
+                ImageUrl="~/App_Themes/Searchbutton.jpg" Height="16px" 
+                style="margin-top: 0px" />
+            <asp:Button ID="btnAccount" runat="server" Text="Account" Height="26px" 
+                Width="127px" BackColor="#3399FF" BorderColor="White" BorderStyle="Solid" 
+                ForeColor="White" />
+       </div>
+        <br /><br />
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <%--Footer of the page--%>
+        <div class="footer">&nbsp;</div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿body 
+{
+    background-color:lightgray;
+}
+
+.content
+{
+ margin-left:auto;
+ margin-right:auto;
+ width:1200px;
+ background-color:White;
+ border-left: thin solid black;
+ border-right: thin solid black;
+ position:relative; 
+ height:100%; 
+}
+.header
+{
+ margin-left:auto;
+ margin-right:auto;
+ width:1000px;
+ height:90px;
+}
+.footer
+{
+ background-color:white;
+ margin-left:auto;
+ margin-right:auto;
+ width:1000px;
+}
+
+/* Track Changes 1*/
