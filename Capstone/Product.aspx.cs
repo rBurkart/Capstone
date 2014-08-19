@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 public partial class Product : System.Web.UI.Page
 {
@@ -11,4 +12,13 @@ public partial class Product : System.Web.UI.Page
     {
 
     }
+
+    
+    protected void btnImageArgentine_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("order.aspx", true);
+    }
+
+
+
 }
