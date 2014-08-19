@@ -17,7 +17,7 @@
 
         <asp:ImageButton ID="imgBelgium" runat="server" 
         ImageUrl="~/images/Belgium_Home.jpg" Height="198px" Width="228px" />
-        <p style="text-align:center">ARGENTINE</p>
+        <p style="text-align:center">ARG</p>
 
         <asp:ImageButton ID="imgBrazil" runat="server" 
         ImageUrl="~/images/Brazil_Home.jpg" Height="198px" Width="228px" />
