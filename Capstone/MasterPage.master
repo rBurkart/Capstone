@@ -16,7 +16,7 @@
         <div class="header">
            <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
            <asp:Button ID="btnHome" runat="server" Text="Home" BackColor="#3399FF" 
-                BorderColor="White" BorderStyle="Solid" ForeColor="black" Width="127px" />
+                BorderColor="White" BorderStyle="Solid" ForeColor="white" Width="127px" />
             <asp:Button ID="btnProduct" runat="server" Text="Jerseys" BackColor="#3399FF" 
                 BorderColor="White" ForeColor="White" Width="137px" BorderStyle="Solid" />
             <asp:TextBox ID="txtSearch" runat="server" style="margin-bottom: 0px" 
