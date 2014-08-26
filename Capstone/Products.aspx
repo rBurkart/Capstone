@@ -12,37 +12,40 @@
         
         <asp:ImageButton ID="btnImageArgentine" runat="server"
         ImageUrl="~/images/Argentina_Home.jpg"  Height="198px" Width="228px" 
-            onclick="btnImageArgentine_Click" />
+            onclick="btnOn_Click" />
         
 
         <asp:ImageButton ID="imgBelgium" runat="server" 
-        ImageUrl="~/images/Belgium_Home.jpg" Height="198px" Width="228px" />
-        <p style="text-align:center">ARG</p>
+        ImageUrl="~/images/Belgium_Home.jpg" Height="198px" Width="228px"
+        onclick="btnOn_Click" />
+        
 
         <asp:ImageButton ID="imgBrazil" runat="server" 
-        ImageUrl="~/images/Brazil_Home.jpg" Height="198px" Width="228px" />
-        <p style="text-align:center">ARGENTINE</p>
+        ImageUrl="~/images/Brazil_Home.jpg" Height="198px" Width="228px"
+        onclick="btnOn_Click" />
+        
 
         <asp:ImageButton ID="imgColombia" runat="server" 
-        ImageUrl="~/images/Colombia_Home.jpg" Height="198px" Width="228px" />
-        <p style="text-align:center">ARGENTINE</p>
-
-        <br />
-        <br />
-        <br />
+        ImageUrl="~/images/Colombia_Home.jpg" Height="198px" Width="228px"
+        onclick="btnOn_Click" />
+        
 
         <asp:ImageButton ID="ImageButton9" runat="server" 
-        ImageUrl="~/images/Costa_Rica_Home.jpg" Height="198px" Width="228px" />
+        ImageUrl="~/images/Costa_Rica_Home.jpg" Height="198px" Width="228px"
+        onclick="btnOn_Click" />
 
 
         <asp:ImageButton ID="ImageButton10" runat="server" 
-        ImageUrl="~/images/France_Home.jpg" Height="198px" Width="228px" />
+        ImageUrl="~/images/France_Home.jpg" Height="198px" Width="228px"
+        onclick="btnOn_Click" />
 
         <asp:ImageButton ID="ImageButton12" runat="server" 
-        ImageUrl="~/images/Germany_Home.jpg" Height="198px" Width="228px" />
+        ImageUrl="~/images/Germany_Home.jpg" Height="198px" Width="228px"
+        onclick="btnOn_Click" />
 
         <asp:ImageButton ID="ImageButton14" runat="server" 
-        ImageUrl="~/images/Netherlands_Home.jpg" Height="198px" Width="228px" />
+        ImageUrl="~/images/Netherlands_Home.jpg" Height="198px" Width="228px"
+        onclick="btnOn_Click" />
 
         <br />
         
