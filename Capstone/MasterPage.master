@@ -15,18 +15,29 @@
     <%--Adds a banner to the header of the page--%>
         <div class="header">
            <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
-           <asp:Button ID="btnHome" runat="server" Text="Home" BackColor="#3399FF" 
-                BorderColor="White" BorderStyle="Solid" ForeColor="white" Width="127px" />
-            <asp:Button ID="btnProduct" runat="server" Text="Jerseys" BackColor="#3399FF" 
-                BorderColor="White" ForeColor="White" Width="137px" BorderStyle="Solid" />
-            <asp:TextBox ID="txtSearch" runat="server" style="margin-bottom: 0px" 
-                Width="564px"></asp:TextBox>
-            <asp:ImageButton ID="ibtnSearch" runat="server" 
-                ImageUrl="~/App_Themes/Searchbutton.jpg" Height="16px" 
-                style="margin-top: 0px" />
-            <asp:Button ID="btnAccount" runat="server" Text="Account" Height="26px" 
-                Width="127px" BackColor="#3399FF" BorderColor="White" BorderStyle="Solid" 
-                ForeColor="White" />
+
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="sdsMainNav" Orientation="Horizontal" StaticDisplayLevels="2" BackColor="#3399FF" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="White" BorderStyle="Solid" BorderColor="White" StaticSubMenuIndent="16px"  > 
+
+          <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+          <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+          <DynamicMenuStyle BackColor="#111111" />
+          <DynamicSelectedStyle BackColor="#1C5E55" />
+          <StaticHoverStyle BackColor="#111111" ForeColor="White" />
+          <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+          <StaticSelectedStyle BackColor="#1C5E55" />
+
+        </asp:Menu>
+
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
+            Font-Size="0.8em" PathSeparator="|" >
+              <CurrentNodeStyle ForeColor="#333333" />
+              <NodeStyle Font-Bold="True" ForeColor="#284E98" />
+              <PathSeparatorStyle Font-Bold="True" ForeColor="#507CD1" />
+              <RootNodeStyle Font-Bold="True" ForeColor="#507CD1" />
+          </asp:SiteMapPath>
+             
+          <asp:SiteMapDataSource ID="sdsMainNav" runat="server"  />
+
        </div>
         <br /><br />
 
