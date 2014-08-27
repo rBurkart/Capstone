@@ -9,7 +9,11 @@
     <br /> <br />
     <asp:GridView runat="server" ID="gvShoppingCart" AutoGenerateColumns="false" EmptyDataText="There is nothig in your shopping cart">
         <Columns>
-        
+
+
+            <asp:BoundField DataField="Country" HeaderText="Country" />
+            <asp:BoundField DataField="Home/Away" HeaderText="Home/Away" />
+ 
             <asp:BoundField DataField="Description" HeaderText="Description" />
             <asp:TemplateField HeaderText="Quantity">
                 <ItemTemplate>
@@ -17,7 +21,7 @@
                     <asp:LinkButton runat="server" ID="btnRemove" Text="Remove" CommandName="Remove"></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="TotalPrice" HeaderText="Total" HeaderStyle-HorizontalAlign="Right" DataFormatString="{0:C}" />
+            <asp:BoundField DataField="Price" HeaderText="Price" HeaderStyle-HorizontalAlign="Right" DataFormatString="{0:C}" />
         </Columns>
     </asp:GridView>
 

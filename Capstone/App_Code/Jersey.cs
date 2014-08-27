@@ -11,20 +11,27 @@ using System.Data;
 /// </summary>
 public class Jersey
 {
-	public SqlDataReader Add_Jersey(int intJerseyID)
+
+    string Country= null;
+    string Home_Away= null;
+    string Price= null; 
+
+	public SqlDataReader Add_Jersey()
 	{
-        string strSQL = "INSERT INTO JERSEY () VALUES ()";
+        string strSQL = "INSERT INTO Product (Country, Home_Away, Price) VALUES (@Country, @Home_Away, @Price)";
 
         SqlConnection conn = new SqlConnection();
 
-        string strConn = "";
+        string strConn = @GetConnectionString();
         conn.ConnectionString = strConn;
 
         SqlCommand comm = new SqlCommand();
         comm.CommandText = strSQL;
         comm.Connection = conn;
 
-        comm.Parameters.AddWithValue("@JerseyID", intJerseyID);
+        comm.Parameters.AddWithValue("@Country", Country);
+        comm.Parameters.AddWithValue("@Home_Away", Home_Away);
+        comm.Parameters.AddWithValue("@Price", Price);
 
         conn.Open();
 
@@ -37,9 +44,9 @@ public class Jersey
 
         SqlCommand comm = new SqlCommand();
 
-        string strConn = "";
+        string strConn = @GetConnectionString();
 
-        string sqlString = "Select * From Jersey Where JerseyID = @JerseyID;";
+        string sqlString = "Select * FROM Product Where Product_Num = @Product_Num;";
 
         conn.ConnectionString = strConn;
 
@@ -59,9 +66,9 @@ public class Jersey
         SqlConnection conn = new SqlConnection();
         SqlCommand comm = new SqlCommand();
 
-        string strConn = "";
+        string strConn = @GetConnectionString();
 
-        string sqlString = "DELETE FROM Jersey Where JerseyID - @JerseyID;";
+        string sqlString = "DELETE FROM Product WHERE Product_Num = @Product_Num;";
 
         conn.ConnectionString = strConn;
         comm.Connection = conn;
@@ -72,5 +79,10 @@ public class Jersey
 
 
 
+    }
+
+    public string GetConnectionString()
+    {
+        return "Server = sql.neit.edu Database = se265_jerseyshop; User Id = tedelman; Password = neit2014;";
     }
 }

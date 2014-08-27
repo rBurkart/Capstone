@@ -14,7 +14,7 @@ public partial class Product : System.Web.UI.Page
     }
 
     
-    protected void btnOn_Click(object sender, ImageClickEventArgs e)
+    protected void btnImgOn_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("~/Product.aspx", true);
     }
