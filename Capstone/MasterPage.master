@@ -43,9 +43,20 @@
 
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />        
         <%--Footer of the page--%>
-        <div class="footer">&nbsp;</div>
+        <div class="footer">&nbsp</div>
     </div>
     </form>
 </body>
