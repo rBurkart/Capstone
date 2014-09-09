@@ -11,7 +11,7 @@
     <asp:TextBox ID="txtDescription" runat="server" Height="70px" TextMode="MultiLine"  
         Width="296px" MaxLength="255">Description:</asp:TextBox></a>
     <br />
-    <asp:Label ID="lblProduct" runat="server" Text="Argentina Jersey" RepeatDirection="Horizontal" ></asp:Label>
+    <asp:Label ID="lblProduct" runat="server" Text="Argentina Jersey"  ></asp:Label>
     <br />
     <asp:RadioButtonList ID="rblHomeAway" runat="server" RepeatDirection="Horizontal">
         <asp:ListItem Text="Home" Value="1" />

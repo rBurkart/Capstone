@@ -7,7 +7,9 @@
         <asp:Label ID="Label1" CssClass="position-center" runat="server" Text="SELECT A TEAM"></asp:Label>
     </h1>
 
-    <div style="text-align:center">
+    
+
+    <%--<div style="text-align:center">
         
         
         <asp:ImageButton ID="btnImageArgentine" runat="server"
@@ -49,7 +51,7 @@
 
         <br />
         
-</div>
+</div>--%>
 
 </asp:Content>
 
