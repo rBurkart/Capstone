@@ -7,39 +7,62 @@
     <title>Capstone Project</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link type="text/css" rel="Stylesheet" href="App_Themes/MyStyleSheet.css" />
+    <link type="text/css" rel="Stylesheet" href="~/App_Themes/MyStyleSheet.css" />
+    <style type="text/css">
+        .style1
+        {
+            font-family: "Berlin Sans FB";
+            color: #FFFFFF;
+        }
+        </style>
 </head>
+
 <body>
     <form id="form1" runat="server">
-    <div class="Content">
+    <div id="content">
+    
+            <asp:Label ID="lblGreeting" runat="server" style="color: #663300"></asp:Label>
+            <br />
+
+            <asp:LinkButton ID="lbtnLogin" runat="server" Text="Log In" 
+            onclick="lbtnLogin_Click" CssClass="style1" BackColor="#003300" 
+                Font-Bold="True"></asp:LinkButton>  
+            <asp:LinkButton ID="lbtnLogout" runat="server" Text="Log Out" 
+            CausesValidation="false" onclick="lbtnLogout_Click" CssClass="style1" 
+                BackColor="#003300" Font-Bold="True"></asp:LinkButton>
+
     <%--Adds a banner to the header of the page--%>
-        <div class="header">
-           <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
+        
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+           <asp:Image ID="imgHeader" runat="server" 
+                ImageUrl="~/App_Themes/capstone_banner.jpg" Width="1055px" 
+                Height="101px" style="font-family: 'Berlin Sans FB'"  />
 
-            <asp:Menu ID="Menu1" runat="server" DataSourceID="sdsMainNav" Orientation="Horizontal" StaticDisplayLevels="2" BackColor="#3399FF" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="White" BorderStyle="Solid" BorderColor="White" StaticSubMenuIndent="16px"  > 
+            <br />
+            <br />
 
-          <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+            <div id="center"> 
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="sdsMainNav" 
+                Orientation="Horizontal" StaticDisplayLevels="2" BackColor="DarkGreen" 
+                DynamicHorizontalOffset="2" Font-Names="Berlin Sans FB" Font-Size="0.8em" 
+                ForeColor="White" StaticSubMenuIndent="10px" 
+                style="text-align: right; font-size: xx-large; "  > 
+
+          <DynamicHoverStyle BackColor="maroon" ForeColor="White" />
           <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-          <DynamicMenuStyle BackColor="#111111" />
-          <DynamicSelectedStyle BackColor="#1C5E55" />
-          <StaticHoverStyle BackColor="#111111" ForeColor="White" />
+          <DynamicMenuStyle BackColor="DarkGreen" />
+          <DynamicSelectedStyle BackColor="DarkGreen" />
+
+          <StaticHoverStyle BackColor="#990000" ForeColor="White" />
           <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-          <StaticSelectedStyle BackColor="#1C5E55" />
+          <StaticSelectedStyle BackColor="green" />
 
         </asp:Menu>
+        </div>
 
-        <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
-            Font-Size="0.8em" PathSeparator="|" >
-              <CurrentNodeStyle ForeColor="#333333" />
-              <NodeStyle Font-Bold="True" ForeColor="#284E98" />
-              <PathSeparatorStyle Font-Bold="True" ForeColor="#507CD1" />
-              <RootNodeStyle Font-Bold="True" ForeColor="#507CD1" />
-          </asp:SiteMapPath>
-             
-          <asp:SiteMapDataSource ID="sdsMainNav" runat="server"  />
-
-       </div>
-        <br /><br />
+       
+        <br /><br /><br /><br /><br /><br />
 
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
@@ -49,13 +72,20 @@
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server" BackColor="#003300" 
+                DynamicHorizontalOffset="2" Font-Names="Berlin Sans FB" Font-Size="1em" 
+                ForeColor="white" StaticSubMenuIndent="10px" >
+            <CurrentNodeStyle ForeColor="White" />
+            <NodeStyle ForeColor="White" />
+            <RootNodeStyle BackColor="#003300" ForeColor="White" />
+          </asp:SiteMapPath>
+             
         <br />        
         <%--Footer of the page--%>
+             
+          <asp:SiteMapDataSource ID="sdsMainNav" runat="server"  />
+
         <div class="footer">&nbsp</div>
     </div>
     </form>

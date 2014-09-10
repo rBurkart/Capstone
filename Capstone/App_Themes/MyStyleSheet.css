@@ -1,33 +1,35 @@
 ﻿body 
 {
-    background-color:lightgray;
+    /*background-color:Gray;*/
+    background-image:url('../images/soccerball.jpg');
+    background-attachment: fixed;
+    height:100%;
+
+    
+    
     
 }
 
-.content
+html,form {
+	height: 100%;
+}
+
+
+#center
+{
+    text-align:center;
+    margin:0 auto;
+    Display:table;
+}
+
+#content
 {
  margin-left:auto;
  margin-right:auto;
- width:1200px;
- background-color:White;
+ width:1275px;
+ background-color:black;
  border-left: thin solid black;
  border-right: thin solid black;
  position:relative; 
  height:100%; 
 }
-.header
-{
- margin-left:auto;
- margin-right:auto;
- width:1000px;
- height:90px;
-}
-.footer
-{
- background-color:white;
- margin-left:auto;
- margin-right:auto;
- width:1000px;
-}
-
-/* Track Changes 1*/
