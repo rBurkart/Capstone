@@ -5,7 +5,66 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 <div>
-    <div style="padding-bottom:10px">   <asp:Image ID="ArgentineOrder" ImageUrl="~/images/Argentina_Home.jpg" runat="server" /> </div>
+      <h2 style="color: white">Team Info</h2>
+    <asp:Image ID="Image" runat="server" />
+    <div id="Jersey">
+    &nbsp&nbsp&nbsp Team:
+    <asp:Label ID="lblTeam" runat="server" Text="" />
+    <br />
+        <br />
+    &nbsp&nbsp&nbsp Description:
+    <asp:Label ID="lblDesc" runat="server" Text="" />
+    <br />
+        <br />
+    &nbsp&nbsp&nbsp ProductSKU:
+    <asp:Label ID="lblSKU" runat="server" Text="" />
+    <br />
+        <br />
+    &nbsp&nbsp&nbsp Product Cost:
+    <asp:Label ID="lblCost" runat="server" Text="" /><br /><br />
+   
+    
+    <asp:Label ID="lblId" runat="server" Text="" Visible="false" />
+
+    <asp:HyperLink ID="GoBack" NavigateUrl="~/Default.aspx" Text="Return To Home Page?" runat="server"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <%-- <div style="padding-bottom:10px">   <asp:Image ID="JerseyImage" runat="server" /> </div>
     <br />
     <a>
     <asp:TextBox ID="txtDescription" runat="server" Height="70px" TextMode="MultiLine"  
@@ -42,7 +101,7 @@
         <asp:ListItem Text="5" Value="5" />
     </asp:DropDownList>
 
-    <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" />
+    <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" />--%>
 
 </div>
 
