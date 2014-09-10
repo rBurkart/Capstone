@@ -24,7 +24,7 @@
                 FUPicture.SaveAs(MapPath("images/" + fileName));
                 lblFeedback.Text = "File " + fileName + " uploaded.";
 
-                Jersey1 temp = new Jersey1();
+                Jersey temp = new Jersey();
                 temp.ProductName = txtName.Text;
                 temp.ProductDesc = txtDesc.Text;
                 temp.ProductSKU = txtSKU.Text;
