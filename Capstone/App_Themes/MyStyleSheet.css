@@ -27,9 +27,6 @@ html,form {
  margin-left:auto;
  margin-right:auto;
  width:1275px;
- background-color:black;
- border-left: thin solid black;
- border-right: thin solid black;
  position:relative; 
  height:100%; 
 }
