@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Sebastian's Project</title>
+    <link type="text/css" rel="Stylesheet" href="~/css/MyStyleSheet.css" />
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+    <div class="content">
+       <asp:Image ID="imgHeader" runat="server" ImageUrl="~/images/happy.jpg"  />
+      
+       
+       <br /> 
+        <asp:LinkButton ID="lbtnLogin" runat="server" onclick="lbtnLogin_Click">LogIn</asp:LinkButton>
+        <br /> 
+       
+        
+        
+        <%--Menu of the page--%>
+        <asp:LinkButton ID="lbtnLogout" runat="server" onclick="lbtnLogout_Click">LogOut</asp:LinkButton>
+        <br />
+        <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
+        <br /><br /><br />
+       <div class="center">
+        <asp:Menu ID="MenuProject" runat="server" 
+            DataSourceID="SDMSProject" Orientation="Horizontal" 
+            StaticSubMenuIndent="16px" StaticDisplayLevels="2">
+        </asp:Menu>   
+       </div>
+
+       <br /><br /><br /><br /><br /><br />
+
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+
+        <br /> <br /> <br /> <br /> <br />
+        
+
+         <%--Site Map of the page--%>
+        <asp:SiteMapPath ID="SiteMapCProject" runat="server" Font-Names="Book Antiqua" 
+            Font-Size="1em" PathSeparator=" > ">
+            <CurrentNodeStyle ForeColor="Purple" />
+            <NodeStyle Font-Bold="True" ForeColor="Purple" />
+            <PathSeparatorStyle Font-Bold="True"  ForeColor="Purple" />
+            <RootNodeStyle Font-Bold="True" ForeColor="Purple" />
+        </asp:SiteMapPath>
+
+
+        <asp:SiteMapDataSource ID="SDMSProject" runat="server" />
+
+        <br /> <br /> <br /> <br /> <br />
+
+        <%--Footer of the page--%>
+        <div class="footer">&nbsp;</div>
+
+
+    </div>
+    </form>
+</body>
+</html>

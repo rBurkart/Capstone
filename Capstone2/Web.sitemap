@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="Home"  description="Home page">
+        <siteMapNode url="~/Products.aspx" title="Products"  description="Products page" />
+        <siteMapNode url="~/Categories.aspx" title="Categories"  description="Categories page" />
+        <siteMapNode url="~/Search.aspx" title="Search"  description="Search page" />
+        <siteMapNode url="~/ShoppingCart.aspx" title="View Cart"  description="View Car page" />
+        <siteMapNode url="~/About.aspx" title="About"  description="About page" />
+        <siteMapNode url="~/Contact.aspx" title="Contact"  description="Contact page" />
+        <siteMapNode url="~/Help.aspx" title="Help"  description="Help page" />
+        
+      <siteMapNode url="" title="My Account"  description="Account page">
+
+        <siteMapNode url="~/User.aspx" title="My profile"  description="My profile page" />
+        <siteMapNode url="~/Order.aspx" title="My orders"  description="My orders page" />
+        <siteMapNode url="~/ForgotPassword.aspx" title="Change Password"  description="Forgot password page" />
+
+      </siteMapNode>
+
+      <siteMapNode url="" title="Admin"  description="Admin page">
+
+        <siteMapNode url="~/Users.aspx" title="Manage users"  description="Manage users page" />
+        <siteMapNode url="~/Orders.aspx" title="Manage orders"  description="Manage orders page" />
+        <siteMapNode url="~/Categories.aspx?action=manage" title="Manage categories"  description="Manage categories page" />
+
+      </siteMapNode>
+      
+    </siteMapNode>
+</siteMap>
