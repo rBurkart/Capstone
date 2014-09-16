@@ -26,7 +26,7 @@
     
     <asp:Label ID="lblId" runat="server" Text="" Visible="false" />
 
-    <asp:HyperLink ID="GoBack" NavigateUrl="~/Default.aspx" Text="Return To Home Page?" runat="server"/>
+    <asp:HyperLink ID="GoBack" NavigateUrl="~/Home.aspx" Text="Return To Home Page?" runat="server"/>
 
 
 

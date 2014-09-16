@@ -12,7 +12,7 @@
     <asp:Label ID="lblCost" runat="server" Text="Product Cost:"/>
     <asp:TextBox ID="txtCost" runat="server" />
     <asp:Label ID="lblPicture" runat="server" Text="Prouduct Picture" />
-    <asp:FileUpload ID="FUPicture" runat="server" />
+    <asp:FileUpload ID="FUPicture"  runat="server" />
     <asp:Button ID="btnUpload" Text="Submit" OnClick="UploadFile" runat="server" />
     <asp:Label ID="lblFeedback" runat="server" />
     <script runat="server">
@@ -37,14 +37,15 @@
                 else
                 {
                     temp.AddProduct();
-                    Response.Redirect("Home.aspx");
+                    lblFeedback.Text = "1 New Product was added.";
+                    
                 }
 
 
             }
             else
             {
-                lblFeedback.Text = "No file uploaded!";
+                lblFeedback.Text = "There was a problem with this product";
             }
         }
     

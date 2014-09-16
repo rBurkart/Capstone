@@ -16,7 +16,7 @@
             <asp:BoundField DataField="ProductDesc" HeaderText="Product Description" />
             <asp:BoundField DataField="ProductSKU" HeaderText="Product SKU" />
             <asp:BoundField DataField="ProductCost" HeaderText="Product Cost" />
-            <asp:HyperLinkField Text="Select" DataNavigateUrlFormatString="Product.aspx?ProductID={0}" DataNavigateUrlFields="ProductID" />
+            <asp:HyperLinkField Text="Select" HeaderText="Select" DataNavigateUrlFormatString="Product.aspx?ProductID={0}" DataNavigateUrlFields="ProductID" />
             
         </Columns>
     </asp:GridView>  

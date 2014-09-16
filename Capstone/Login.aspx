@@ -24,7 +24,7 @@
     }
     .style6
     {
-            color: #FFFFFF;
+            color: black;
             font-size: large;
             font-family: "Berlin Sans FB";
         }
@@ -112,7 +112,7 @@
             &nbsp;&nbsp;
             <asp:Button ID="btnSignup" runat="server" Text="Signup" 
                 style="color: #003300; font-family: 'Berlin Sans FB';" 
-                ForeColor="#003300" />
+                ForeColor="#003300" OnClick="btnSignup_Click" />
         </td>
        
     </tr>

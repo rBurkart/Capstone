@@ -86,7 +86,7 @@
              
           <asp:SiteMapDataSource ID="sdsMainNav" runat="server"  />
 
-        <div class="footer">&nbsp</div>
+        
     </div>
     </form>
 </body>

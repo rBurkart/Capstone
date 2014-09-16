@@ -240,7 +240,7 @@ public class Jersey
         SqlCommand comm = new SqlCommand();
         //creation of a new Sqlcommand
 
-        String strSQL = "SELECT * FROM Teams WHERE 0=0";
+        String strSQL = "SELECT * FROM Products WHERE 0=0";
         
 
 
@@ -264,7 +264,7 @@ public class Jersey
 
         conn.Open();
         //opens the connection
-        da.Fill(ds, "Teams");
+        da.Fill(ds, "Products");
         // fills the data set with persons
         conn.Close();
         //closes the connection

@@ -21,9 +21,10 @@ public partial class Product : System.Web.UI.Page
             foreach (DataRow dr in table.Rows)
             {
                 HyperLink hp = new HyperLink();
-                hp.Text = Convert.ToString(i) + " " + dr["CountryName"].ToString();
-                string hp2 = dr["CountryID"].ToString();
+                hp.Text = Convert.ToString(i) + " " + dr["ProductDesc"].ToString();
+                string hp2 = dr["ProductID"].ToString();
                 hp.NavigateUrl = "~/Product.aspx?id=" + hp2;
+                hp.CssClass = "productLink";
                 Controls.Add(hp);
                 i++;
                 
