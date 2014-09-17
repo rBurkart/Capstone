@@ -4,15 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Sebastian's Project</title>
-    <link type="text/css" rel="Stylesheet" href="~/css/MyStyleSheet.css" />
+    <title>Capstone Project</title>
+    <link type="text/css" rel="Stylesheet" href="~/App_Themes/MyStyleSheet.css" />
 </head>
 
 
 <body>
     <form id="form1" runat="server">
     <div class="content">
-       <asp:Image ID="imgHeader" runat="server" ImageUrl="~/images/happy.jpg"  />
+       <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
       
        
        <br /> 
