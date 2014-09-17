@@ -1,7 +1,6 @@
 body 
 {
-    background-color:Purple;
-  
+    background-image:url('../App_Themes/Soccer_background.jpg');
 }
 
 banner {
@@ -56,5 +55,9 @@ font-style:normal;
     font-weight:bold;
     margin-top: 0px;
 }
+
+
+
+
 
 /* Track Changes 1*/
