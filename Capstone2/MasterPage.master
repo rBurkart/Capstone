@@ -14,14 +14,9 @@
     <div class="content">
        <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
       
-       
-       <br /> 
+       <br />
         <asp:LinkButton ID="lbtnLogin" runat="server" onclick="lbtnLogin_Click">LogIn</asp:LinkButton>
-        <br /> 
-       
         
-        
-        <%--Menu of the page--%>
         <asp:LinkButton ID="lbtnLogout" runat="server" onclick="lbtnLogout_Click">LogOut</asp:LinkButton>
         <br />
         <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
@@ -33,7 +28,7 @@
         </asp:Menu>   
        </div>
 
-       <br /><br /><br /><br /><br /><br />
+       <br /><br />
 
 
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
