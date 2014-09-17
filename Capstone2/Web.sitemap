@@ -2,6 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="~/Default.aspx" title="Home"  description="Home page">
         <siteMapNode url="~/Products.aspx" title="Products"  description="Products page" />
+        <siteMapNode url="~/Categories.aspx" title="Categories"  description="Categories page" />
         <siteMapNode url="~/Search.aspx" title="Search"  description="Search page" />
         <siteMapNode url="~/ShoppingCart.aspx" title="View Cart"  description="View Car page" />
         <siteMapNode url="~/About.aspx" title="About"  description="About page" />
@@ -20,6 +21,7 @@
 
         <siteMapNode url="~/Users.aspx" title="Manage users"  description="Manage users page" />
         <siteMapNode url="~/Orders.aspx" title="Manage orders"  description="Manage orders page" />
+        <siteMapNode url="~/Categories.aspx?action=manage" title="Manage categories"  description="Manage categories page" />
 
       </siteMapNode>
       
