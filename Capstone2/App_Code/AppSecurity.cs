@@ -57,12 +57,7 @@ public class AppSecurity
 
 
     #endregion
-        
-    
-    #region Constructors 
-    #endregion 
-
-
+       
     #region Methods/Functions
 
     public static AppSecurity login(string username, string password)
@@ -72,20 +67,20 @@ public class AppSecurity
         
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ConnectionString);
 
-        SqlCommand cmd = new SqlCommand("SPUserLogin", cn);
+        SqlCommand cmd = new SqlCommand("spUserLogin", cn);
         
         // Mark the Command as a Stored Procedure
         cmd.CommandType = CommandType.StoredProcedure;
 
         // Add Parameters to Stored Procedure
-        SqlParameter pUserName = new SqlParameter("@userName", SqlDbType.VarChar, 30);
+        SqlParameter pUserName = new SqlParameter("@UserName", SqlDbType.VarChar, 30);
         pUserName.Value = username;
         cmd.Parameters.Add(pUserName);
 
         // Add Parameters to Stored Procedure
         //cmd.Parameters.AddWithValue(@password, password);
 
-        SqlParameter parameterPassword = new SqlParameter("@Password", SqlDbType.VarChar, 30);
+        SqlParameter parameterPassword = new SqlParameter("@UserPassword", SqlDbType.VarChar, 30);
         parameterPassword.Value = password;
         cmd.Parameters.Add(parameterPassword);
 
