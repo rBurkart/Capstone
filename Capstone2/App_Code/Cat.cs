@@ -19,39 +19,24 @@ public class Cat
 
 
     #region Fields
-
-    private int _id;
-    private string _name;
-    //private string _desc;
-    private bool _active;
+        private int _id;
+        private string _name;
+        private bool _active;
     #endregion
 
     #region Properties
 
-    public int Id
+    public int ID
     {
         get { return _id; }
         set { _id = value; }
     }
-
-
-
 
     public string Name
     {
         get { return _name; }
         set { _name = value; }
     }
-
-
-
-
-    //public string Desc
-    //{
-    //    get { return _desc; }
-    //    set { _desc = value; }
-    //}
-
 
     public bool Active
     {
@@ -81,7 +66,7 @@ public class Cat
         cmd.CommandType = CommandType.StoredProcedure;
 
         // Add Parameters to Stored Procedure
-        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
 
         // Open the database connection and execute the command
         try
@@ -109,7 +94,7 @@ public class Cat
         // Return the dataset
         if (dt.Rows.Count > 0)
         {
-            c.Id = Convert.ToInt32(dt.Rows[0]["TeamID"].ToString());
+            c.ID = Convert.ToInt32(dt.Rows[0]["TeamID"].ToString());
             c.Name = dt.Rows[0]["CountryName"].ToString();
             //c.Desc = dt.Rows[0]["CategoryDesc"].ToString();
             c.Active = Convert.ToBoolean(dt.Rows[0]["TeamIsActive"].ToString());
@@ -139,10 +124,10 @@ public class Cat
         //2nd is connection object
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = cn;
-        if (c.Id > 0)
+        if (c.ID > 0)
         {
             cmd.CommandText = "spUpdateTeam";
-            cmd.Parameters.Add("@TeamID", SqlDbType.Int).Value = c.Id;
+            cmd.Parameters.Add("@TeamID", SqlDbType.Int).Value = c.ID;
         }
         else
         {
@@ -157,7 +142,6 @@ public class Cat
 
         // Add Parameters to Stored Procedure
         cmd.Parameters.Add("@CountryName", SqlDbType.VarChar).Value = c.Name;
-        //cmd.Parameters.Add("@CategoryDesc", SqlDbType.VarChar).Value = c.Desc;
         cmd.Parameters.Add("@TeamIsActive", SqlDbType.Bit).Value = c.Active;
 
         // Open the database connection and execute the command

@@ -37,11 +37,11 @@ public partial class _Default : System.Web.UI.Page
             Cat c = new Cat();
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-                c.Id = Convert.ToInt32(Request.QueryString["id"].ToString());
+                c.ID = Convert.ToInt32(Request.QueryString["id"].ToString());
             }
             else
             {
-                c.Id = 0;
+                c.ID = 0;
             }
             c.Name = txtName.Text;
             //c.Desc = txtDescription.Text;
