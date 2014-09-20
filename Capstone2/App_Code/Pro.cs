@@ -19,6 +19,13 @@ public class Pro
         private string _productDesc;
         private string _productSKU;
         private decimal _productCost;
+        private string _picture;
+
+        public string Picture
+        {
+            get { return _picture; }
+            set { _picture = value; }
+        }
         private bool _productIsActive;
     #endregion
 

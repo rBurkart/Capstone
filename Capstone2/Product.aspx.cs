@@ -48,6 +48,7 @@ public partial class _Default : System.Web.UI.Page
             p.ProductSKU = txtSKU.Text;
             p.TeamID = ddlTeam.SelectedIndex;
             p.ProductCost = Convert.ToDecimal(txtPrice.Text);
+            p.Picture = "";
             p.ProductIsActive = Convert.ToBoolean(rblIsActive.SelectedValue.ToString());
 
             if (Pro.Save(p))
