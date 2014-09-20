@@ -22,7 +22,7 @@
                  <%--Required field validator for Name--%> 
        
                 <asp:RequiredFieldValidator ID="RFVtxtName" Runat="server" 
-                controltovalidate="txtName"
+                controltovalidate="txtName2"
                 errormessage="Name is required.">* 
                 </asp:RequiredFieldValidator>
 

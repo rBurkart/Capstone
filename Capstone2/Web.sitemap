@@ -13,7 +13,6 @@
 
         <siteMapNode url="~/User.aspx" title="My profile"  description="My profile page" />
         <siteMapNode url="~/Order.aspx" title="My orders"  description="My orders page" />
-        <siteMapNode url="~/Product.aspx" title="My Products"  description="My Products page" />
         <siteMapNode url="~/ForgotPassword.aspx" title="Change Password"  description="Forgot password page" />
 
       </siteMapNode>
