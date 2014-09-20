@@ -26,29 +26,10 @@
                 </asp:RequiredFieldValidator>
                 
                 <td align="right" >
-                <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label>
+                <asp:Label ID="lblName" runat="server" Text="Country Name:"></asp:Label>
                 </td>
                 <td align="left">       
                 <asp:TextBox ID="txtName" runat="server" />   
-                </td>
-                <td>
-                &nbsp;
-                </td>
-      </tr>  
-
-      <tr>        
-                
-                <asp:RequiredFieldValidator ID="RFVDescription" Runat="server" 
-                controltovalidate="txtDescription"
-                errormessage="Description is required.">* 
-                </asp:RequiredFieldValidator>
-
-                
-                <td align="right" >
-                <asp:Label ID="lblDescription" runat="server" Text="Description:"></asp:Label>
-                </td>
-                <td align="left">   
-                <asp:TextBox ID="txtDescription" runat="server" />   
                 </td>
                 <td>
                 &nbsp;
@@ -60,7 +41,10 @@
                 <asp:Label ID="lblIsActive" runat="server" Text="Is Active:"></asp:Label>
                 </td>
                 <td align="left">   
-                <asp:CheckBox ID="checkboxIsActive" runat="server" />
+                    <asp:RadioButtonList ID="rblIsActive" runat="server">
+                        <asp:ListItem Value="False">No</asp:ListItem>
+                        <asp:ListItem Value="True">Yes</asp:ListItem>
+                    </asp:RadioButtonList>
                 </td>
                 <td>
                 &nbsp;
@@ -69,7 +53,7 @@
       
       <tr>        
                 <td align="right" >
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" onclick="btnUpdate_Click" />
                 </td>
                 <td align="left"> 
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" onclick="btnCancel_Click" />
@@ -80,6 +64,11 @@
       </tr>  
 
     </table>
+
+
+    <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
+
+    <br />
 
 </asp:Content>
 

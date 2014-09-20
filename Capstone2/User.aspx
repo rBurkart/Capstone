@@ -121,9 +121,6 @@
             <td style="width: 179px">
     <asp:DropDownList ID="DdlState" runat="server" Height="22px" Width="179px" 
                     DataSourceID="SDSSatate" DataTextField="State_Name" DataValueField="StateID">
-    <%--<asp:ListItem Text="CT" Value="1"></asp:ListItem>
-    <asp:ListItem Text="MA" Value="2"></asp:ListItem>
-    <asp:ListItem Text="RI" Value="3"></asp:ListItem>--%>
     </asp:DropDownList>
             </td>
             <td>
@@ -331,7 +328,7 @@
                 &nbsp;</td>
             <td style="width: 179px">
 
-    <asp:Button ID="btnAccept" runat="server" Text="Accept" 
+    <asp:Button ID="btnAccept" runat="server" Text="Update" 
                     style="font-family: 'Book Antiqua'" />
     &nbsp;&nbsp;
     <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" 
@@ -342,8 +339,8 @@
                     value="reset" /></td>
             <td>
                 <asp:SqlDataSource ID="SDSSatate" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-                    SelectCommand="SPGetStateDdl" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                    ConnectionString="<%$ ConnectionStrings:cs %>" 
+                    SelectCommand="spGetStateDDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             </td>
         </tr>
     </table>
