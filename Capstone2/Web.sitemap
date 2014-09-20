@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="~/Default.aspx" title="Home"  description="Home page">
-        <siteMapNode url="~/Products.aspx" title="Jerseys" description="Jerseys page" />
-        <siteMapNode url="~/Categories.aspx" title="Teams"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx" title="Jerseys" description="Jerseys page" />
+
+      <siteMapNode url="" title="Teams"  description="Teams page">
+        <siteMapNode url="~/App_Themes/Argentina_Home.jpg" title="Argentina"  description="Teams page" />
+        <siteMapNode url="~/App_Themes/Belgium_Home.jpg" title="Belgium"  description="Teams page" />
+        <siteMapNode url="~/App_Themes/Brazil_Home.jpg" title="Brazil"  description="Teams page" />
+        <siteMapNode url="~/App_Themes/Colombia_Home.jpg" title="Colombia"  description="Teams page" />
+        <siteMapNode url="~/App_Themes/Costa_Rica_Home.jpg" title="Costa Rica"  description="Teams page" />
+        <siteMapNode url="~/App_Themes/France_Home.jpg" title="France"  description="Teams page" />
+        <siteMapNode url="~/App_Themes/Germany_Home.jpg" title="Germany"  description="Teams page" />
+        <siteMapNode url="~/App_Themes/Netherlands_Home.jpg" title="Netherlands"  description="Teams page" />
+        
+      </siteMapNode>
+      
         <siteMapNode url="~/Search.aspx" title="Search"  description="Search page" />
         <siteMapNode url="~/ShoppingCart.aspx" title="View Cart"  description="View Car page" />
         <siteMapNode url="~/About.aspx" title="About"  description="About page" />

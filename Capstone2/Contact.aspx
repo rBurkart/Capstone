@@ -2,7 +2,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+<div class="menu">
+           <br />
+           <asp:Label ID="lblTitle" runat="server" Text="CONTACT FORM"></asp:Label>
 
+           <br /><br />
+      
 <asp:Panel ID="Panel1" runat="server" DefaultButton="Button1">
     <p>
         Please Fill the Following to Send Mail.</p>
@@ -37,6 +42,8 @@
 <p>
     <asp:Label ID="DisplayMessage" runat="server" Visible="false" />
 </p>  
+
+</div>
 
 
 
