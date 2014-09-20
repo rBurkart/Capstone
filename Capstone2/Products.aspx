@@ -28,6 +28,8 @@
                 SortExpression="TeamID" />
             <asp:BoundField DataField="ProductName" HeaderText="ProductName" 
                 SortExpression="ProductName" />
+                <asp:BoundField DataField="ProductDesc" HeaderText="ProductDesc" 
+                SortExpression="ProductDesc" />
             <asp:BoundField DataField="ProductSKU" HeaderText="ProductSKU" 
                 SortExpression="ProductSKU" />
             <asp:BoundField DataField="ProductCost" HeaderText="ProductCost" 

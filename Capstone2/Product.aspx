@@ -74,19 +74,19 @@
       </tr>
 
       <tr>
-                <asp:RequiredFieldValidator ID="RFVCategory" Runat="server" 
-                controltovalidate="ddlCategory"
-                errormessage="Category is required.">* 
+                <asp:RequiredFieldValidator ID="rfvTeam" Runat="server" 
+                controltovalidate="ddlTeam"
+                errormessage="Team is required.">* 
                 </asp:RequiredFieldValidator>
                 
                 <td align="right" >
-                <asp:Label ID="lblCategory" runat="server" Text="Category:"></asp:Label>
+                <asp:Label ID="lblTeam" runat="server" Text="Team:"></asp:Label>
                 </td>
                 <td align="left">   
-                    <asp:DropDownList ID="ddlCategory" runat="server">
-                    <asp:ListItem Text="Cat 1" Value="1"></asp:ListItem>
+                    <asp:DropDownList ID="ddlTeam" runat="server" DataSourceID="sdsTeam" DataTextField="CountryName" DataValueField="TeamID">
+                    <%--<asp:ListItem Text="Cat 1" Value="1"></asp:ListItem>
                     <asp:ListItem Text="Cat 2" Value="2"></asp:ListItem>
-                    <asp:ListItem Text="Cat 3" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="Cat 3" Value="3"></asp:ListItem>--%>
                     </asp:DropDownList>
                 </td>
                 <td>
@@ -94,13 +94,34 @@
                 </td>
        </tr>    
 
+             <tr>
+                <asp:RequiredFieldValidator ID="rfvPrice" Runat="server" 
+                controltovalidate="txtPrice"
+                errormessage="Price is required.">* 
+                </asp:RequiredFieldValidator>
+                
+                <td align="right" >
+                <asp:Label ID="lblPrice" runat="server" Text="Price: "></asp:Label>
+                </td>
+                <td align="left">
+                <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                &nbsp;
+                </td>
+      </tr>
+
        <tr>
                                
                 <td align="right" >
                 <asp:Label ID="lblIsActive" runat="server" Text="Is Active:"></asp:Label>
                 </td>
                 <td align="left">   
-                <asp:CheckBox ID="checkboxIsActive" runat="server" />
+                <%--<asp:CheckBox ID="cbIsActive" runat="server" />--%>
+                    <asp:RadioButtonList ID="rblIsActive" runat="server">
+                        <asp:ListItem Value="False">No</asp:ListItem>
+                        <asp:ListItem Value="True">Yes</asp:ListItem>
+                    </asp:RadioButtonList>
                 </td>
                 <td>
                 &nbsp;
@@ -120,7 +141,14 @@
        </tr> 
 
     </table>
-    
+
+    <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
+
+    <br />
+
+    <asp:SqlDataSource ID="sdsTeam" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:cs %>" 
+                    SelectCommand="spGetActiveTeamsDDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
    
   
 
