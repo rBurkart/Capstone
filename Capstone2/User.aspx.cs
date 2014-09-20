@@ -13,8 +13,8 @@ public partial class _Default : System.Web.UI.Page
         {
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-                Users c = new Users();
-                c = Users.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
+                Use c = new Use();
+                c = Use.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
                 
                 txtFirstname.Text = c.UserFname;
                 txtSecondname.Text = c.UserLname;
@@ -30,6 +30,7 @@ public partial class _Default : System.Web.UI.Page
                 txtConfirmEmail.Text = c.UserEmail;
                 txtPhone.Text = c.UserPhone;
                 rblIsActive.SelectedValue = c.Active.ToString();
+                
 
             }
         }
@@ -49,7 +50,7 @@ public partial class _Default : System.Web.UI.Page
 
         if (!string.IsNullOrEmpty(txtUsername.Text))
         {
-            Users c = new Users();
+            Use c = new Use();
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
                 c.UserId = Convert.ToInt32(Request.QueryString["id"].ToString());
@@ -72,9 +73,10 @@ public partial class _Default : System.Web.UI.Page
             c.UserEmail = txtEmail.Text;
             c.UserEmail = txtConfirmEmail.Text;
             c.UserPhone = txtPhone.Text;
+            c.UserRole = "User";
             c.Active = Convert.ToBoolean(rblIsActive.SelectedValue.ToString());
 
-            if (Users.Save(c))
+            if (Use.Save(c))
             {
                 Response.Redirect("~/Users.aspx");
             }

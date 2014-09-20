@@ -9,14 +9,9 @@ using System.Configuration;
 /// <summary>
 /// Summary description for Users
 /// </summary>
-public class Users
+public class Use
 {
-	public Users()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
+
 
 
     #region Fields
@@ -143,10 +138,10 @@ public class Users
 
     #region Methods/Functions
 
-    public static Users Fetch(int id)
+    public static Use Fetch(int id)
     {
 
-        Users c = new Users();
+        Use c = new Use();
         //connection object - ConfigurationManager namespace allows for runtime 
         //access to web.config setting, specifically connection strings and key values
         SqlConnection cn = new
@@ -218,7 +213,7 @@ public class Users
         return dt;
     }
 
-    public static bool Save(Users c)
+    public static bool Save(Use c)
     {
         bool b = false;
 
@@ -295,5 +290,12 @@ public class Users
         return b;
     }
 
-    #endregion
+    #endregion	
+
+    public Use()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
 }

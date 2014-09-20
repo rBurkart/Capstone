@@ -13,12 +13,12 @@ public partial class _Default : System.Web.UI.Page
         {
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-                Products p = new Products();
-                p = Products.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
+                Pro p = new Pro();
+                p = Pro.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
                 txtName.Text = p.ProductName;
                 txtDescription.Text = p.ProductDesc;
                 txtSKU.Text = p.ProductSKU;
-                ddlTeam.Text = p.TeamID.ToString();
+                ddlTeam.SelectedIndex = p.TeamID;
                 txtPrice.Text = p.ProductCost.ToString();
                 rblIsActive.SelectedValue = p.ProductIsActive.ToString();
             }
@@ -34,7 +34,7 @@ public partial class _Default : System.Web.UI.Page
     {
         if (!string.IsNullOrEmpty(txtName.Text))
         {
-            Products p = new Products();
+            Pro p = new Pro();
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
                 p.ProductID = Convert.ToInt32(Request.QueryString["id"].ToString());
@@ -46,11 +46,11 @@ public partial class _Default : System.Web.UI.Page
             p.ProductName = txtName.Text;
             p.ProductDesc = txtDescription.Text;
             p.ProductSKU = txtSKU.Text;
-            p.TeamID = Convert.ToInt32(ddlTeam.Text);
+            p.TeamID = ddlTeam.SelectedIndex;
             p.ProductCost = Convert.ToDecimal(txtPrice.Text);
             p.ProductIsActive = Convert.ToBoolean(rblIsActive.SelectedValue.ToString());
 
-            if (Products.Save(p))
+            if (Pro.Save(p))
             {
                 Response.Redirect("~/Products.aspx");
             }

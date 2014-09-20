@@ -8,7 +8,7 @@ using System.Configuration;
 /// <summary>
 /// Summary description for Products
 /// </summary>
-public class Products
+public class Pro
 {
 	
 
@@ -66,10 +66,10 @@ public class Products
         }
     #endregion
 
-    #region Fields
-        public static Products Fetch(int id)
+    #region Methods/Functions
+        public static Pro Fetch(int id)
         {
-            Products p = new Products();
+            Pro p = new Pro();
 
             SqlConnection cn = new 
                 SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ConnectionString);
@@ -125,7 +125,7 @@ public class Products
         return dt;
     }
 
-    public static bool Save(Products p)
+    public static bool Save(Pro p)
     {
         bool b = false;
 
@@ -196,7 +196,7 @@ public class Products
     #endregion
 
     #region Constructor
-        public Products()
+        public Pro()
 	    {
 		    //
 		    // TODO: Add constructor logic here

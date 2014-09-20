@@ -44,7 +44,6 @@ public partial class _Default : System.Web.UI.Page
                 c.ID = 0;
             }
             c.Name = txtName.Text;
-            //c.Desc = txtDescription.Text;
             c.Active = Convert.ToBoolean(rblIsActive.SelectedValue.ToString());
 
             if (Cat.Save(c))
