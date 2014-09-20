@@ -3,5 +3,17 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+<div class="menu">
+
+    <asp:Image ID="ImageWelcome" runat="server" 
+        ImageUrl="~/App_Themes/Welcome_PageBanner.jpg" />
+
+
+        <br /><br /><br />
+    <asp:LinkButton ID="LinkButtonWelcome" runat="server" 
+        onclick="LinkButtonWelcome_Click" style="font-size: x-large">CLICK HERE TO CONTINUE SHOPPING</asp:LinkButton>
+
+
+    </div>
 </asp:Content>
 

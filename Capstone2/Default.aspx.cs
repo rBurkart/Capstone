@@ -11,4 +11,8 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+    protected void LinkButtonWelcome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Product.aspx", true);
+    }
 }
