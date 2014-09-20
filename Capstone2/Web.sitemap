@@ -19,9 +19,9 @@
 
       <siteMapNode url="" title="Admin"  description="Admin page">
 
-        <siteMapNode url="~/Users.aspx" title="Manage users"  description="Manage users page" />
-        <siteMapNode url="~/Orders.aspx" title="Manage orders"  description="Manage orders page" />
-        <siteMapNode url="~/Products.aspx" title="Manage products"  description="Manage products page" />
+        <siteMapNode url="~/Users.aspx?action=manage" title="Manage users"  description="Manage users page" />
+        <siteMapNode url="~/Orders.aspx?action=manage" title="Manage orders"  description="Manage orders page" />
+        <siteMapNode url="~/Products.aspx?action=manage" title="Manage products"  description="Manage products page" />
         <siteMapNode url="~/Categories.aspx?action=manage" title="Manage teams"  description="Manage team page" />
 
       </siteMapNode>
