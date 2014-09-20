@@ -2,11 +2,11 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:SqlDataSource ID="SDSViewUsers" runat="server" 
+    <asp:SqlDataSource ID="sdsUsers" runat="server" 
         ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetUsersGrid" 
         SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        DataKeyNames="UserID" DataSourceID="SDSViewUsers">
+    <asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="False" 
+        DataKeyNames="UserID" DataSourceID="sdsUsers">
         <Columns>
 
         <asp:HyperLinkField DataNavigateUrlFields="UserID" 
