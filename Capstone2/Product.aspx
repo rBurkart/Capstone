@@ -22,7 +22,7 @@
                  <%--Required field validator for Name--%> 
        
                 <asp:RequiredFieldValidator ID="RFVtxtName" Runat="server" 
-                controltovalidate="txtName"
+                controltovalidate="txtName2"
                 errormessage="Name is required.">* 
                 </asp:RequiredFieldValidator>
 
@@ -117,7 +117,9 @@
                 <asp:Label ID="lblIsActive" runat="server" Text="Is Active:"></asp:Label>
                 </td>
                 <td align="left">   
-                <%--<asp:CheckBox ID="cbIsActive" runat="server" />--%>
+                    <%--<asp:ListItem Text="Cat 1" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="Cat 2" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="Cat 3" Value="3"></asp:ListItem>--%>
                     <asp:RadioButtonList ID="rblIsActive" runat="server">
                         <asp:ListItem Value="False">No</asp:ListItem>
                         <asp:ListItem Value="True">Yes</asp:ListItem>
