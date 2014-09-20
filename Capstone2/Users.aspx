@@ -2,8 +2,11 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="spGetUsersGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UserID" DataSourceID="SqlDataSource1">
+    <asp:SqlDataSource ID="SDSViewUsers" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetUsersGrid" 
+        SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+        DataKeyNames="UserID" DataSourceID="SDSViewUsers">
         <Columns>
             <asp:BoundField DataField="UserID" HeaderText="UserID" InsertVisible="False" ReadOnly="True" SortExpression="UserID" />
             <asp:BoundField DataField="Full_Name" HeaderText="Full_Name" ReadOnly="True" SortExpression="Full_Name" />
