@@ -3,6 +3,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+<asp:SqlDataSource ID="sdsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetProductGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+
 <div class="menu">
            <br />
            <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
@@ -12,8 +14,8 @@
 
        <div class="content">
            <br />
-    <asp:GridView ID="GridViewProducts" runat="server" AutoGenerateColumns="False" 
-        DataKeyNames="ProductID" DataSourceID="SDSProducts" Width="991px">
+    <asp:GridView ID="gvProducts" runat="server" AutoGenerateColumns="False" 
+        DataKeyNames="ProductID" DataSourceID="sdsProducts">
         <Columns>
 
         <asp:HyperLinkField DataNavigateUrlFields="ProductID" 
@@ -22,8 +24,8 @@
 
             <asp:BoundField DataField="ProductID" HeaderText="ProductID" 
                 InsertVisible="False" ReadOnly="True" SortExpression="ProductID" />
-            <asp:BoundField DataField="CountryName" HeaderText="CountryName" 
-                SortExpression="CountryName" />
+            <asp:BoundField DataField="TeamID" HeaderText="TeamID" 
+                SortExpression="TeamID" />
             <asp:BoundField DataField="ProductName" HeaderText="ProductName" 
                 SortExpression="ProductName" />
             <asp:BoundField DataField="ProductSKU" HeaderText="ProductSKU" 
