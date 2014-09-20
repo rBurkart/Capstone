@@ -2,13 +2,13 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="spGetCategoryGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>--%>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CategoryID" DataSourceID="SqlDataSource1">
+    <asp:SqlDataSource ID="sdsTeams" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetTeamsGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+
+    <asp:GridView ID="gvTeams" runat="server" AutoGenerateColumns="False" DataKeyNames="TeamID" DataSourceID="sdsTeams">
         <Columns>
-            <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" InsertVisible="False" ReadOnly="True" SortExpression="CategoryID" />
-            <asp:BoundField DataField="CategoryName" HeaderText="CategoryName" SortExpression="CategoryName" />
-            <asp:BoundField DataField="CategoryDesc" HeaderText="CategoryDesc" SortExpression="CategoryDesc" />
-            <asp:CheckBoxField DataField="CategoryIsActive" HeaderText="CategoryIsActive" SortExpression="CategoryIsActive" />
+            <asp:BoundField DataField="TeamID" HeaderText="TeamID" InsertVisible="False" ReadOnly="True" SortExpression="TeamID" />
+            <asp:BoundField DataField="CountryName" HeaderText="CountryName" SortExpression="CountryName" />
+            <asp:CheckBoxField DataField="TeamIsActive" HeaderText="TeamIsActive" SortExpression="TeamIsActive" />
         </Columns>
     </asp:GridView>
 </asp:Content>
