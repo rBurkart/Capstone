@@ -154,10 +154,10 @@ public class Pro
         cmd.CommandType = CommandType.StoredProcedure;
 
         // Add Parameters to Stored Procedure
+        cmd.Parameters.Add("@TeamID", SqlDbType.VarChar).Value = p.TeamID;
         cmd.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = p.ProductName;
         cmd.Parameters.Add("@ProductDesc", SqlDbType.VarChar).Value = p.ProductDesc;
         cmd.Parameters.Add("@ProductSKU", SqlDbType.VarChar).Value = p.ProductSKU;
-        cmd.Parameters.Add("@TeamID", SqlDbType.VarChar).Value = p.TeamID;
         cmd.Parameters.Add("@ProductCost", SqlDbType.Decimal).Value = p.ProductCost;
         cmd.Parameters.Add("@ProductIsActive", SqlDbType.Bit).Value = p.ProductIsActive;
 

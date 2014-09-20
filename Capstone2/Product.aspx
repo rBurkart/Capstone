@@ -131,7 +131,8 @@
        </tr>
                 
        <tr>     <td align="right" >
-                <asp:Button ID="brnUpdate" runat="server" Text="Update" />
+                <asp:Button ID="brnUpdate" runat="server" Text="Update" 
+                    onclick="brnUpdate_Click" />
                 </td>
                 <td align="left">
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" 

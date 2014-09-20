@@ -32,6 +32,10 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnAddItem_Click(object sender, EventArgs e)
     {
+
+    }
+    protected void brnUpdate_Click(object sender, EventArgs e)
+    {
         if (!string.IsNullOrEmpty(txtName.Text))
         {
             Pro p = new Pro();
