@@ -111,7 +111,7 @@ public class Pro
                 p.TeamID = Convert.ToInt32(dt.Rows[0]["TeamID"].ToString());
                 p.ProductName = dt.Rows[0]["ProductName"].ToString();
                 p.ProductDesc = dt.Rows[0]["ProductDesc"].ToString();
-                p.ProductName = dt.Rows[0]["ProductSKU"].ToString();
+                p.ProductSKU = dt.Rows[0]["ProductSKU"].ToString();
                 p.ProductCost = Convert.ToDecimal(dt.Rows[0]["ProductCost"].ToString());
                 p.ProductIsActive = Convert.ToBoolean(dt.Rows[0]["ProductIsActive"].ToString());
             }
