@@ -9,8 +9,7 @@
 
        <br /> 
 
-<%--it handles the error messages on the form--%>
-    <%--<asp:ValidationSummary 
+<%--it handles the error messages on the form--%><%--<asp:ValidationSummary 
     ID="ValidationSummary" 
     CssClass="menu"
     Runat="server"
@@ -301,14 +300,6 @@
             errormessage="Phone is required.">*
         </asp:RequiredFieldValidator>
 
-        <asp:RegularExpressionValidator 
-            ID="REGEXPhone" runat="server" 
-            controltovalidate="txtPhone"
-            ErrorMessage="Phone is not valid. Example (555)444-3333" 
-            ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" 
-                    style="font-family: 'Book Antiqua'">
-            </asp:RegularExpressionValidator>
-
             </td>
         </tr>
         <tr>
@@ -318,7 +309,10 @@
                     style="font-family: 'Book Antiqua'"></asp:Label>
             </td>
             <td style="width: 179px">
-    <asp:CheckBox ID="checkboxIsActive" runat="server" style="text-align: right" />
+                <asp:RadioButtonList ID="rblIsActive" runat="server">
+                    <asp:ListItem Value="False">No</asp:ListItem>
+                    <asp:ListItem Value="True">Yes</asp:ListItem>
+                </asp:RadioButtonList>
             </td>
             <td>
                 &nbsp;</td>
@@ -329,7 +323,7 @@
             <td style="width: 179px">
 
     <asp:Button ID="btnAccept" runat="server" Text="Update" 
-                    style="font-family: 'Book Antiqua'" />
+                    style="font-family: 'Book Antiqua'" onclick="btnAccept_Click" />
     &nbsp;&nbsp;
     <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" 
         onclick="btnCancel_Click" style="font-family: 'Book Antiqua'" />
@@ -344,6 +338,8 @@
             </td>
         </tr>
     </table>
+    
+    <asp:Label ID="lblError" runat="server"></asp:Label>
 
 
 </asp:Content>

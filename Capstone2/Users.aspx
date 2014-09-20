@@ -23,5 +23,8 @@
             <asp:CheckBoxField DataField="UserIsActive" HeaderText="UserIsActive" SortExpression="UserIsActive" />
         </Columns>
     </asp:GridView>
+
+    <asp:LinkButton ID="lbtnAddUser" runat="server" onclick="lbtnAddUser_Click">Add new user</asp:LinkButton>
+
 </asp:Content>
 
