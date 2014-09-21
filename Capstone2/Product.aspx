@@ -9,7 +9,7 @@
 <asp:ValidationSummary ID="ValidationSummary" Runat="server" ForeColor="Red" headertext="There were errors on the page:" />
 
 <br /><br />
-<div class="title">
+<div class="menu">
            <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
        </div>
 
@@ -131,8 +131,8 @@
        </tr>
                 
        <tr>     <td align="right" >
-                <asp:Button ID="brnUpdate" runat="server" Text="Update" 
-                    onclick="brnUpdate_Click" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" 
+                    onclick="btnUpdate_Click" />
                 </td>
                 <td align="left">
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" 

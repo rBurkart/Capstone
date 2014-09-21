@@ -34,7 +34,7 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
-    protected void brnUpdate_Click(object sender, EventArgs e)
+    protected void btnUpdate_Click(object sender, EventArgs e)
     {
         if (!string.IsNullOrEmpty(txtName.Text))
         {

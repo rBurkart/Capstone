@@ -13,23 +13,23 @@ public partial class _Default : System.Web.UI.Page
         {
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-                Use c = new Use();
-                c = Use.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
+                Use u = new Use();
+                u = Use.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
                 
-                txtFirstname.Text = c.UserFname;
-                txtSecondname.Text = c.UserLname;
-                txtAddress1.Text = c.UserAdd1;
-                txtAddress2.Text = c.UserAdd2;
-                txtCity.Text = c.UserCity;
-                DdlState.SelectedIndex = c.StateID;   // Double check this
-                txtZip.Text = c.UserZip;
-                txtUsername.Text = c.UserName;
-                txtPassword.Text = c.UserPassword;
-                txtConfirmPass.Text = c.UserPassword;
-                txtEmail.Text = c.UserEmail;
-                txtConfirmEmail.Text = c.UserEmail;
-                txtPhone.Text = c.UserPhone;
-                rblIsActive.SelectedValue = c.Active.ToString();
+                txtFirstname.Text = u.UserFname;
+                txtSecondname.Text = u.UserLname;
+                txtAddress1.Text = u.UserAdd1;
+                txtAddress2.Text = u.UserAdd2;
+                txtCity.Text = u.UserCity;
+                DdlState.SelectedIndex = u.StateID;   // Double check this
+                txtZip.Text = u.UserZip;
+                txtUsername.Text = u.UserName;
+                txtPassword.Text = u.UserPassword;
+                txtConfirmPass.Text = u.UserPassword;
+                txtEmail.Text = u.UserEmail;
+                txtConfirmEmail.Text = u.UserEmail;
+                txtPhone.Text = u.UserPhone;
+                rblIsActive.SelectedValue = u.Active.ToString();
                 
 
             }
@@ -50,33 +50,33 @@ public partial class _Default : System.Web.UI.Page
 
         if (!string.IsNullOrEmpty(txtUsername.Text))
         {
-            Use c = new Use();
+            Use u = new Use();
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-                c.UserId = Convert.ToInt32(Request.QueryString["id"].ToString());
+                u.UserId = Convert.ToInt32(Request.QueryString["id"].ToString());
             }
             else
             {
-                c.UserId = 0;
+                u.UserId = 0;
             }
 
-            c.UserFname = txtFirstname.Text;
-            c.UserLname = txtSecondname.Text;
-            c.UserAdd1 = txtAddress1.Text;
-            c.UserAdd2 = txtAddress2.Text;
-            c.UserCity = txtCity.Text;
-            c.StateID = DdlState.SelectedIndex;   // Double check this
-            c.UserZip = txtZip.Text;
-            c.UserName = txtUsername.Text;
-            c.UserPassword = txtPassword.Text;
-            c.UserPassword = txtConfirmPass.Text;
-            c.UserEmail = txtEmail.Text;
-            c.UserEmail = txtConfirmEmail.Text;
-            c.UserPhone = txtPhone.Text;
-            c.UserRole = "User";
-            c.Active = Convert.ToBoolean(rblIsActive.SelectedValue.ToString());
+            u.UserFname = txtFirstname.Text;
+            u.UserLname = txtSecondname.Text;
+            u.UserAdd1 = txtAddress1.Text;
+            u.UserAdd2 = txtAddress2.Text;
+            u.UserCity = txtCity.Text;
+            u.StateID = DdlState.SelectedIndex;   // Double check this
+            u.UserZip = txtZip.Text;
+            u.UserName = txtUsername.Text;
+            u.UserPassword = txtPassword.Text;
+            u.UserPassword = txtConfirmPass.Text;
+            u.UserEmail = txtEmail.Text;
+            u.UserEmail = txtConfirmEmail.Text;
+            u.UserPhone = txtPhone.Text;
+            u.UserRole = "User";
+            u.Active = Convert.ToBoolean(rblIsActive.SelectedValue.ToString());
 
-            if (Use.Save(c))
+            if (Use.Save(u))
             {
                 Response.Redirect("~/Users.aspx");
             }
