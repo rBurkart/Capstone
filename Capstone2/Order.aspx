@@ -3,121 +3,120 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<asp:ValidationSummary ID="ValidationSummary" Runat="server" ForeColor="Red" headertext="There were errors on the page:" />
+<asp:ValidationSummary ID="ValidationSummary" Runat="server" ForeColor="Red" 
+        headertext="There were errors on the page:" Height="74px" />
 
-<br /><br />
 <div class="menu">
-           <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
+           <asp:Label ID="lblTitle" runat="server" Text="ORDERS"></asp:Label>
        </div>
 
-       <br />
 
 
-
-    <table style="margin:auto border:1px solid blue; width:25%; padding: 50px">
+    <table style="width:46%; padding: 50px">
       <tr>        
-                 <%--Required field validator for Name--%> 
-       
-                <asp:RequiredFieldValidator ID="RFVtxtName" Runat="server" 
-                controltovalidate="txtName"
-                errormessage="Name is required.">* 
-                </asp:RequiredFieldValidator>
+             
 
                 
-                <td align="right" >
-                    <asp:Label ID="lblName" runat="server" Text="Name: "></asp:Label>
+                <td align="right" style="height: 37px; width: 523px" >
+                    <asp:Label ID="lblName" runat="server" Text="User ID"></asp:Label>
                 </td>
-                <td align="left">
-                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-                </td>
-                <td>
-                &nbsp;
+                <td align="left" style="height: 37px; width: 472px">
+                    <asp:TextBox ID="txtUserID" runat="server" Width="39px"></asp:TextBox>
                 </td>
       </tr>  
 
       <tr>
                 
-                <asp:RequiredFieldValidator ID="RFVDescription" Runat="server" 
-                controltovalidate="txtDescription"
-                errormessage="Description is required.">* 
-                </asp:RequiredFieldValidator>
                 
-                <td align="right" >
-                <asp:Label ID="lblDescription" runat="server" Text="Description: "></asp:Label>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblDescription" runat="server" Text="Status ID:"></asp:Label>
                 </td>
-                <td align="left">
-                <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
-                </td>
-                <td>
-                &nbsp;
+                <td align="left" style="width: 472px">
+                <asp:TextBox ID="txtStatusID" runat="server" Width="39px"></asp:TextBox>
                 </td>
       </tr>
 
       <tr>
-                <asp:RequiredFieldValidator ID="RFVSku" Runat="server" 
-                controltovalidate="txtSKU"
-                errormessage="SKU is required.">* 
-                </asp:RequiredFieldValidator>
                 
-                <td align="right" >
-                <asp:Label ID="lblSKU" runat="server" Text="SKU: "></asp:Label>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblSKU" runat="server" Text="Order Date:"></asp:Label>
                 </td>
-                <td align="left">
-                <asp:TextBox ID="txtSKU" runat="server"></asp:TextBox>
-                </td>
-                <td>
-                &nbsp;
+                <td align="left" style="width: 472px">
+                <asp:TextBox ID="txtOrderDate" runat="server" Width="188px"></asp:TextBox>
                 </td>
       </tr>
 
       <tr>
-                <asp:RequiredFieldValidator ID="rfvTeam" Runat="server" 
-                controltovalidate="ddlTeam"
-                errormessage="Team is required.">* 
-                </asp:RequiredFieldValidator>
                 
-                <td align="right" >
-                <asp:Label ID="lblTeam" runat="server" Text="Team:"></asp:Label>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblTeam" runat="server" Text="Order Address 1:"></asp:Label>
                 </td>
-                <td align="left">   
-                    <asp:DropDownList ID="ddlTeam" runat="server" DataSourceID="sdsTeam" DataTextField="CountryName" DataValueField="TeamID">
-                    <%--<asp:ListItem Text="Cat 1" Value="1"></asp:ListItem>
-                    <asp:ListItem Text="Cat 2" Value="2"></asp:ListItem>
-                    <asp:ListItem Text="Cat 3" Value="3"></asp:ListItem>--%>
-                    </asp:DropDownList>
-                </td>
-                <td>
-                &nbsp;
+                <td align="left" style="width: 472px">   
+                <asp:TextBox ID="txtOrderAddress1" runat="server" Width="188px"></asp:TextBox>
                 </td>
        </tr>    
 
              <tr>
-                <asp:RequiredFieldValidator ID="rfvPrice" Runat="server" 
-                controltovalidate="txtPrice"
-                errormessage="Price is required.">* 
-                </asp:RequiredFieldValidator>
                 
-                <td align="right" >
-                <asp:Label ID="lblPrice" runat="server" Text="Price: "></asp:Label>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblPrice" runat="server" Text="Order Address 2:"></asp:Label>
                 </td>
-                <td align="left">
-                <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
-                </td>
-                <td>
-                &nbsp;
+                <td align="left" style="width: 472px">
+                <asp:TextBox ID="txtOrderAddress2" runat="server" Width="188px"></asp:TextBox>
                 </td>
       </tr>
                 
-       <tr>     <td align="right" >
+             <tr>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblSKU0" runat="server" Text="Order City:"></asp:Label>
+                </td>
+                <td align="left" style="width: 472px">
+                <asp:TextBox ID="txtOrderCity" runat="server" Width="188px"></asp:TextBox>
+                </td>
+      </tr>
+                
+             <tr>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblSKU1" runat="server" Text="State ID:"></asp:Label>
+                </td>
+                <td align="left" style="width: 472px">
+                <asp:TextBox ID="txtStateID" runat="server" Width="188px"></asp:TextBox>
+                </td>
+      </tr>
+                
+             <tr>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblSKU2" runat="server" Text="Order ZIP:"></asp:Label>
+                </td>
+                <td align="left" style="width: 472px">
+                <asp:TextBox ID="txtOrderZip" runat="server" Width="188px"></asp:TextBox>
+                </td>
+      </tr>
+                
+             <tr>
+                
+                <td align="right" style="width: 523px" >
+                <asp:Label ID="lblSKU3" runat="server" Text="Order Last Update:"></asp:Label>
+                </td>
+                <td align="left" style="width: 472px">
+                <asp:TextBox ID="txtOrderLastUpdate" runat="server" Width="188px"></asp:TextBox>
+                </td>
+      </tr>
+                
+       <tr>     <td align="right" style="width: 523px" >
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" 
                     onclick="btnUpdate_Click" />
                 </td>
-                <td align="left">
+                <td align="left" style="width: 472px">
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" 
                         onclick="btnCancel_Click" />
-                </td>
-                <td>
-                &nbsp;
                 </td>
        </tr> 
 
