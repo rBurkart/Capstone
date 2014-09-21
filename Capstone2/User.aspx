@@ -120,7 +120,6 @@
             <td style="width: 179px">
     <asp:DropDownList ID="DdlState" runat="server" Height="22px" Width="179px" 
                     DataSourceID="SDSSatate" DataTextField="State_Name" DataValueField="StateID">
-                    <asp:ListItem Text="pick one"></asp:ListItem>
     </asp:DropDownList>
             </td>
             <td>
