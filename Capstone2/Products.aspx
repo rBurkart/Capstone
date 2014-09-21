@@ -38,7 +38,7 @@
     </asp:GridView>
     </div>
 
-    <asp:LinkButton ID="lbtnAddProduct" runat="server" onclick="lbtnAddUser_Click">Add new Product</asp:LinkButton>
+    <asp:LinkButton ID="lbtnAddProduct" runat="server" Text="Add new Product" onclick="lbtnAddUser_Click"></asp:LinkButton>
 
 </asp:Content>
 

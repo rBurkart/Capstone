@@ -15,9 +15,9 @@
         ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetUsersGrid" 
         SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
-        <div class="menu">
+        <%--<div class="menu">
            <asp:Label ID="lblTitle" runat="server" Text="USERS"></asp:Label>
-       </div>
+       </div>--%>
 
        <br />
 
