@@ -7,7 +7,7 @@
 
 <br /><br />
 <div class="menu">
-           <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
+           <asp:Label ID="lblTitle" runat="server" Text="ORDERS"></asp:Label>
        </div>
 
        <br />
@@ -25,10 +25,10 @@
 
                 
                 <td align="right" >
-                    <asp:Label ID="lblName" runat="server" Text="Name: "></asp:Label>
+                    <asp:Label ID="lblName" runat="server" Text="User ID"></asp:Label>
                 </td>
                 <td align="left">
-                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUserID" runat="server"></asp:TextBox>
                 </td>
                 <td>
                 &nbsp;
@@ -43,10 +43,10 @@
                 </asp:RequiredFieldValidator>
                 
                 <td align="right" >
-                <asp:Label ID="lblDescription" runat="server" Text="Description: "></asp:Label>
+                <asp:Label ID="lblDescription" runat="server" Text="Status ID:"></asp:Label>
                 </td>
                 <td align="left">
-                <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtStatusID" runat="server"></asp:TextBox>
                 </td>
                 <td>
                 &nbsp;
@@ -60,10 +60,10 @@
                 </asp:RequiredFieldValidator>
                 
                 <td align="right" >
-                <asp:Label ID="lblSKU" runat="server" Text="SKU: "></asp:Label>
+                <asp:Label ID="lblSKU" runat="server" Text="Order Date:"></asp:Label>
                 </td>
                 <td align="left">
-                <asp:TextBox ID="txtSKU" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtOrderDate" runat="server"></asp:TextBox>
                 </td>
                 <td>
                 &nbsp;
@@ -77,14 +77,10 @@
                 </asp:RequiredFieldValidator>
                 
                 <td align="right" >
-                <asp:Label ID="lblTeam" runat="server" Text="Team:"></asp:Label>
+                <asp:Label ID="lblTeam" runat="server" Text="Order Address 1:"></asp:Label>
                 </td>
                 <td align="left">   
-                    <asp:DropDownList ID="ddlTeam" runat="server" DataSourceID="sdsTeam" DataTextField="CountryName" DataValueField="TeamID">
-                    <%--<asp:ListItem Text="Cat 1" Value="1"></asp:ListItem>
-                    <asp:ListItem Text="Cat 2" Value="2"></asp:ListItem>
-                    <asp:ListItem Text="Cat 3" Value="3"></asp:ListItem>--%>
-                    </asp:DropDownList>
+                <asp:TextBox ID="txtOrderAddress1" runat="server"></asp:TextBox>
                 </td>
                 <td>
                 &nbsp;
@@ -98,14 +94,50 @@
                 </asp:RequiredFieldValidator>
                 
                 <td align="right" >
-                <asp:Label ID="lblPrice" runat="server" Text="Price: "></asp:Label>
+                <asp:Label ID="lblPrice" runat="server" Text="Order Address 2:"></asp:Label>
                 </td>
                 <td align="left">
-                <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtOrderAddress2" runat="server"></asp:TextBox>
                 </td>
                 <td>
                 &nbsp;
                 </td>
+      </tr>
+                
+             <tr>
+                
+                <td align="right" >
+                <asp:Label ID="lblSKU0" runat="server" Text="Order City:"></asp:Label>
+                </td>
+                <td align="left">
+                <asp:TextBox ID="txtOrderCity" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    &nbsp;</td>
+      </tr>
+                
+             <tr>
+                
+                <td align="right" >
+                <asp:Label ID="lblSKU1" runat="server" Text="State ID:"></asp:Label>
+                </td>
+                <td align="left">
+                <asp:TextBox ID="txtStateID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    &nbsp;</td>
+      </tr>
+                
+             <tr>
+                
+                <td align="right" >
+                <asp:Label ID="lblSKU2" runat="server" Text="Order ZIP:"></asp:Label>
+                </td>
+                <td align="left">
+                <asp:TextBox ID="txtOrderZip" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    &nbsp;</td>
       </tr>
                 
        <tr>     <td align="right" >

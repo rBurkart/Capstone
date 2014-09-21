@@ -24,5 +24,7 @@
         </Columns>
     </asp:GridView>
 
+    <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Add a new order</asp:LinkButton>
+
 </asp:Content>
 
