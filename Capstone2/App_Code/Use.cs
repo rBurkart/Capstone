@@ -33,6 +33,7 @@ public class Use
 
     #endregion
 
+
     #region Properties
 
     public int UserId
@@ -134,12 +135,13 @@ public class Use
 
     #endregion
 
+
     #region Methods/Functions
 
     public static Use Fetch(int id)
     {
 
-        Use u = new Use();
+        Use c = new Use();
         //connection object - ConfigurationManager namespace allows for runtime 
         //access to web.config setting, specifically connection strings and key values
         SqlConnection cn = new
@@ -183,23 +185,23 @@ public class Use
         // Return the dataset
         if (dt.Rows.Count > 0)
         {
-            u.UserId = Convert.ToInt32(dt.Rows[0]["UserID"].ToString());
-            u.UserFname = dt.Rows[0]["UserFname"].ToString();
-            u.UserLname = dt.Rows[0]["UserLname"].ToString();
-            u.UserAdd1 = dt.Rows[0]["UserAdd1"].ToString();
-            u.UserAdd2 = dt.Rows[0]["UserAdd2"].ToString();
-            u.UserCity = dt.Rows[0]["UserCity"].ToString();
-            u.StateID = Convert.ToInt32(dt.Rows[0]["StateID"].ToString());
-            u.UserZip = dt.Rows[0]["UserZip"].ToString();
-            u.UserName = dt.Rows[0]["UserName"].ToString();
-            u.UserPassword = dt.Rows[0]["UserPassword"].ToString();
-            u.UserEmail = dt.Rows[0]["UserEmail"].ToString();
-            u.UserPhone = dt.Rows[0]["UserPhone"].ToString();
-            u.UserRole = dt.Rows[0]["UserRole"].ToString();
-            u.Active = Convert.ToBoolean(dt.Rows[0]["UserIsActive"].ToString());
+            c.UserId = Convert.ToInt32(dt.Rows[0]["UserID"].ToString());
+            c.UserFname = dt.Rows[0]["UserFname"].ToString();
+            c.UserLname = dt.Rows[0]["UserLname"].ToString();
+            c.UserAdd1 = dt.Rows[0]["UserAdd1"].ToString();
+            c.UserAdd2 = dt.Rows[0]["UserAdd2"].ToString();
+            c.UserCity = dt.Rows[0]["UserCity"].ToString();
+            c.StateID = Convert.ToInt32(dt.Rows[0]["StateID"].ToString());
+            c.UserZip = dt.Rows[0]["UserZip"].ToString();
+            c.UserName = dt.Rows[0]["UserName"].ToString();
+            c.UserPassword = dt.Rows[0]["UserPassword"].ToString();
+            c.UserEmail = dt.Rows[0]["UserEmail"].ToString();
+            c.UserPhone = dt.Rows[0]["UserPhone"].ToString();
+            c.UserRole = dt.Rows[0]["UserRole"].ToString();
+            c.Active = Convert.ToBoolean(dt.Rows[0]["UserIsActive"].ToString());
 
         }
-        return u;
+        return c;
     }
 
 
@@ -290,12 +292,10 @@ public class Use
 
     #endregion	
 
-    #region Constructor
     public Use()
 	{
 		//
 		// TODO: Add constructor logic here
 		//
-    }
-    #endregion
+	}
 }

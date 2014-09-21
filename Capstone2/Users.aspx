@@ -14,13 +14,6 @@
     <asp:SqlDataSource ID="sdsUsers" runat="server" 
         ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetUsersGrid" 
         SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-
-        <div class="menu">
-           <asp:Label ID="lblTitle" runat="server" Text="USERS"></asp:Label>
-       </div>
-
-       <br />
-
     <asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="False" 
         DataKeyNames="UserID" DataSourceID="sdsUsers">
         <Columns>

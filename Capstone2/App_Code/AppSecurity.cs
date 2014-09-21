@@ -27,6 +27,7 @@ public class AppSecurity
 
     #endregion 
 
+    
     #region Properties
     
     public int UserId  
@@ -130,6 +131,7 @@ public class AppSecurity
     }
 
     #endregion 
+
     
     #region Constructors
 

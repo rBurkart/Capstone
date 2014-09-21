@@ -10,7 +10,14 @@ using System.Configuration;
 /// </summary>
 public class Cat
 {
-	
+	public Cat()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+
     #region Fields
         private int _id;
         private string _name;
@@ -170,15 +177,6 @@ public class Cat
         return b;
     }
 
-    #endregion
-
-    #region constructor
-        public Cat()
-	    {
-		    //
-		    // TODO: Add constructor logic here
-		    //
-	    }
     #endregion
 
 }
