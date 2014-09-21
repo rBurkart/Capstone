@@ -187,7 +187,7 @@ public class Ord
         cmd.CommandType = CommandType.StoredProcedure;
 
         // Add Parameters to Stored Procedure
-        cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = o.OrderDate;
+        cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = o.UserID;
         cmd.Parameters.Add("@StatusID", SqlDbType.Int).Value = o.StatusID;
         cmd.Parameters.Add("@OrderDate", SqlDbType.Date).Value = o.OrderDate;
         cmd.Parameters.Add("@OrderAdd1", SqlDbType.VarChar).Value = o.OrderAdd1;
@@ -195,7 +195,7 @@ public class Ord
         cmd.Parameters.Add("@OrderCity", SqlDbType.VarChar).Value = o.OrderCity;
         cmd.Parameters.Add("@StateID", SqlDbType.Int).Value = o.StateID;
         cmd.Parameters.Add("@OrderZip", SqlDbType.VarChar).Value = o.OrderZip;
-        cmd.Parameters.Add("@OrderLastUpdate", SqlDbType.Date).Value = o.OrderDate;
+        cmd.Parameters.Add("@OrderLastUpdate", SqlDbType.Date).Value = o.OrderLastUpdate;
 
         // Open the database connection and execute the command
         try

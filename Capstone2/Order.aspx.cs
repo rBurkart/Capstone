@@ -13,19 +13,19 @@ public partial class _Default : System.Web.UI.Page
         {
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-                Ord u = new Ord();
-                u = Ord.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
+                Ord o = new Ord();
+                o = Ord.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
 
 
-                txtUserID.Text = u.UserID.ToString();
-                txtStatusID.Text = u.StatusID.ToString();
-                txtOrderDate.Text = u.OrderDate.ToString();
-                txtOrderAddress1.Text = u.OrderAdd1;
-                txtOrderAddress2.Text = u.OrderAdd2;
-                txtOrderCity.Text = u.OrderCity;
-                txtStateID.Text = u.StatusID.ToString();
-                txtOrderZip.Text = u.OrderZip;
-                txtOrderLastUpdate.Text = u.OrderLastUpdate.ToString();
+                txtUserID.Text = o.UserID.ToString();
+                txtStatusID.Text = o.StatusID.ToString();
+                txtOrderDate.Text = o.OrderDate.ToString();
+                txtOrderAddress1.Text = o.OrderAdd1;
+                txtOrderAddress2.Text = o.OrderAdd2;
+                txtOrderCity.Text = o.OrderCity;
+                txtStateID.Text = o.StatusID.ToString();
+                txtOrderZip.Text = o.OrderZip;
+                txtOrderLastUpdate.Text = o.OrderLastUpdate.ToString();
 
                 }
         }
@@ -37,7 +37,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
-        if (!string.IsNullOrEmpty(txtUserID.Text))
+        if (!string.IsNullOrEmpty(txtOrderCity.Text))
         {
             Ord o = new Ord();
             if (!string.IsNullOrEmpty(Request.QueryString["id"]))
