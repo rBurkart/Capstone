@@ -5,7 +5,9 @@
 
 <asp:SqlDataSource ID="sdsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetProductGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
+
 <div class="menu">
+            <br />
            <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
       </div>
 

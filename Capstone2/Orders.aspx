@@ -9,11 +9,7 @@
        <br />
     <asp:SqlDataSource ID="sdsOrders" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetOrdersGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
-    <div class="menu">
-           <asp:Label ID="lblTitle" runat="server" Text="ORDERS"></asp:Label>
-       </div>
-
-       <br />
+    
 
     <asp:GridView ID="gvOrders" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="sdsOrders">
         <Columns>
