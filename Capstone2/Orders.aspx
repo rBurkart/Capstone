@@ -9,17 +9,9 @@
        <br />
     <asp:SqlDataSource ID="sdsOrders" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetOrdersGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
-    <div class="menu">
-           <asp:Label ID="lblTitle" runat="server" Text="ORDERS"></asp:Label>
-       </div>
-
-       <br />
-
     <asp:GridView ID="gvOrders" runat="server" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="sdsOrders">
         <Columns>
-                <asp:HyperLinkField DataNavigateUrlFields="OrderID" 
-            DataNavigateUrlFormatString="~/Order.aspx?id={0}" DataTextField="OrderID" 
-            HeaderText="Order Number" SortExpression="OrderID" />
+            <asp:BoundField DataField="OrderID" HeaderText="OrderID" InsertVisible="False" ReadOnly="True" SortExpression="OrderID" />
             <asp:BoundField DataField="UserEmail" HeaderText="UserEmail" SortExpression="UserEmail" />
             <asp:BoundField DataField="StatusName" HeaderText="StatusName" SortExpression="StatusName" />
             <asp:BoundField DataField="OrderDate" HeaderText="OrderDate" SortExpression="OrderDate" />
