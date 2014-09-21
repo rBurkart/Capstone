@@ -3,9 +3,16 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:SqlDataSource ID="sdsTeams" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetTeamsGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+        <div class="menu">
+           <asp:Label ID="lblTitle" runat="server" Text="TEAMS"></asp:Label>
+       </div>
 
+       <br />
     <asp:GridView ID="gvTeams" runat="server" AutoGenerateColumns="False" 
         DataSourceID="SDSTeamsGrid">
+
+
+
         <Columns>
          
          

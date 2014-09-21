@@ -6,44 +6,90 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 /// <summary>
-/// Summary description for Cat
+/// Summary description for Ord
 /// </summary>
-public class Cat
+public class Ord
 {
-	
     #region Fields
-        private int _id;
-        private string _name;
-        private bool _active;
+    private int _orderID;
+    private int _userID;
+    private int _statusID;
+    private DateTime _orderDate;
+    private string _orderAdd1;
+    private string _orderAdd2;
+    private string _orderCity;
+    private int _stateID;
+    private string _orderZip;
+    private DateTime _orderLastUpdate;
     #endregion
 
     #region Properties
-
-    public int ID
+    public int OrderID
     {
-        get { return _id; }
-        set { _id = value; }
+        get { return _orderID; }
+        set { _orderID = value; }
     }
 
-    public string Name
+    public int UserID
     {
-        get { return _name; }
-        set { _name = value; }
+        get { return _userID; }
+        set { _userID = value; }
     }
 
-    public bool Active
+    public int StatusID
     {
-        get { return _active; }
-        set { _active = value; }
+        get { return _statusID; }
+        set { _statusID = value; }
+    }
+
+    public DateTime OrderDate
+    {
+        get { return _orderDate; }
+        set { _orderDate = value; }
+    }
+
+    public string OrderAdd1
+    {
+        get { return _orderAdd1; }
+        set { _orderAdd1 = value; }
+    }
+
+    public string OrderAdd2
+    {
+        get { return _orderAdd2; }
+        set { _orderAdd2 = value; }
+    }
+
+    public string OrderCity
+    {
+        get { return _orderCity; }
+        set { _orderCity = value; }
+    }
+
+    public int StateID
+    {
+        get { return _stateID; }
+        set { _stateID = value; }
+    }
+
+    public string OrderZip
+    {
+        get { return _orderZip; }
+        set { _orderZip = value; }
+    }
+
+    public DateTime OrderLastUpdate
+    {
+        get { return _orderLastUpdate; }
+        set { _orderLastUpdate = value; }
     }
     #endregion
 
     #region Methods/Functions
-
-    public static Cat Fetch(int id)
+    public static Ord Fetch(int id)
     {
 
-        Cat c = new Cat();
+        Ord o = new Ord();
         //connection object - ConfigurationManager namespace allows for runtime 
         //access to web.config setting, specifically connection strings and key values
         SqlConnection cn = new
@@ -51,7 +97,7 @@ public class Cat
         //command object is for direct interface with database
         //this constructor uses 2 arguments, first is name of stored procedure, 
         //2nd is connection object
-        SqlCommand cmd = new SqlCommand("spGetTeamByID", cn);
+        SqlCommand cmd = new SqlCommand("spGetOrderByID", cn);
         //Create datatable to hold result set
         DataTable dt = new DataTable();
         // Mark the Command as a Stored Procedure
@@ -59,7 +105,7 @@ public class Cat
         cmd.CommandType = CommandType.StoredProcedure;
 
         // Add Parameters to Stored Procedure
-        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
+        cmd.Parameters.Add("@OrderID", SqlDbType.Int).Value = id;
 
         // Open the database connection and execute the command
         try
@@ -87,12 +133,18 @@ public class Cat
         // Return the dataset
         if (dt.Rows.Count > 0)
         {
-            c.ID = Convert.ToInt32(dt.Rows[0]["TeamID"].ToString());
-            c.Name = dt.Rows[0]["CountryName"].ToString();
-            //c.Desc = dt.Rows[0]["CategoryDesc"].ToString();
-            c.Active = Convert.ToBoolean(dt.Rows[0]["TeamIsActive"].ToString());
+            o.OrderID = Convert.ToInt32(dt.Rows[0]["OrderID"].ToString());
+            o.UserID = Convert.ToInt32(dt.Rows[0]["UserID"].ToString());
+            o.StatusID = Convert.ToInt32(dt.Rows[0]["StatusID"].ToString());
+            o.OrderDate = Convert.ToDateTime(dt.Rows[0]["OrderDate"].ToString());
+            o.OrderAdd1 = dt.Rows[0]["OrderAdd1"].ToString();
+            o.OrderAdd2 = dt.Rows[0]["OrderAdd2"].ToString();
+            o.OrderCity = dt.Rows[0]["OrderCity"].ToString();
+            o.StateID = Convert.ToInt32(dt.Rows[0]["StateID"].ToString());
+            o.OrderZip = dt.Rows[0]["OrderZip"].ToString();
+            o.OrderLastUpdate = Convert.ToDateTime(dt.Rows[0]["OrderLastUpdate"].ToString());
         }
-        return c;
+        return o;
     }
 
 
@@ -104,7 +156,7 @@ public class Cat
         return dt;
     }
 
-    public static bool Save(Cat c)
+    public static bool Save(Ord o)
     {
         bool b = false;
 
@@ -117,14 +169,14 @@ public class Cat
         //2nd is connection object
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = cn;
-        if (c.ID > 0)
+        if (o.OrderID > 0)
         {
-            cmd.CommandText = "spUpdateTeam";
-            cmd.Parameters.Add("@TeamID", SqlDbType.Int).Value = c.ID;
+            cmd.CommandText = "spUpdateOrder";
+            cmd.Parameters.Add("@OrderID", SqlDbType.Int).Value = o.OrderID;
         }
         else
         {
-            cmd.CommandText = "spInsertTeam";
+            cmd.CommandText = "spInsertOrder";
         }
 
         //Create datatable to hold result set
@@ -134,8 +186,13 @@ public class Cat
         cmd.CommandType = CommandType.StoredProcedure;
 
         // Add Parameters to Stored Procedure
-        cmd.Parameters.Add("@CountryName", SqlDbType.VarChar).Value = c.Name;
-        cmd.Parameters.Add("@TeamIsActive", SqlDbType.Bit).Value = c.Active;
+        cmd.Parameters.Add("@StatusID", SqlDbType.VarChar).Value = o.StatusID;
+        cmd.Parameters.Add("@OrderDate", SqlDbType.VarChar).Value = o.OrderDate;
+        cmd.Parameters.Add("@OrderAdd1", SqlDbType.VarChar).Value = o.OrderAdd1;
+        cmd.Parameters.Add("@OrderAdd2", SqlDbType.VarChar).Value = o.OrderAdd2;
+        cmd.Parameters.Add("@OrderCity", SqlDbType.VarChar).Value = o.OrderCity;
+        cmd.Parameters.Add("@StateID", SqlDbType.VarChar).Value = o.StateID;
+        cmd.Parameters.Add("@OrderZip", SqlDbType.VarChar).Value = o.OrderZip;
 
         // Open the database connection and execute the command
         try
@@ -169,16 +226,14 @@ public class Cat
 
         return b;
     }
-
     #endregion
 
-    #region constructor
-        public Cat()
-	    {
-		    //
-		    // TODO: Add constructor logic here
-		    //
-	    }
+    #region Constructor
+    public Ord()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+    }
     #endregion
-
 }
