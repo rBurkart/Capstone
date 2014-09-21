@@ -143,6 +143,7 @@ public class Ord
             o.StateID = Convert.ToInt32(dt.Rows[0]["StateID"].ToString());
             o.OrderZip = dt.Rows[0]["OrderZip"].ToString();
             o.OrderLastUpdate = Convert.ToDateTime(dt.Rows[0]["OrderLastUpdate"].ToString());
+            
         }
         return o;
     }
