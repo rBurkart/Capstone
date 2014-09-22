@@ -23,7 +23,7 @@ public partial class _Default : System.Web.UI.Page
             ddlProducts.DataBind();
 
         }
-        
+
         SelectedProduct = this.GetSelectedProduct();
 
         lblName.Text = SelectedProduct.ProductName;
@@ -44,20 +44,20 @@ public partial class _Default : System.Web.UI.Page
         Product.ProductSKU = dvProduct[0]["ProductSKU"].ToString();
         Product.ProductCost = Convert.ToDecimal(dvProduct[0]["ProductCost"]).ToString();
         Product.ImageFile = dvProduct[0]["Picture"].ToString();
-        
+
         return Product;
     }
 
     protected void btnAdd_Click1(object sender, System.EventArgs e)
     {
-        //if (Page.IsValid)
-        //{
-        //    CartItem CartItem = new CartItem();
-        //    CartItem.Product = SelectedProduct;
-        //    CartItem.Quantity = Convert.ToInt32(txtQuantity.Text);
-        //    this.AddToCart(CartItem);
-        //    Response.Redirect("ShoppingCart.aspx");
-        //}
+        if (Page.IsValid)
+        {
+            CartItem CartItem = new CartItem();
+            CartItem.Product = SelectedProduct;
+            CartItem.Quantity = Convert.ToInt32(txtQuantity.Text);
+            this.AddToCart(CartItem);
+            //Response.Redirect("ShoppingCart.aspx");
+        }
     }
 
     private void AddToCart(CartItem CartItem)
@@ -87,5 +87,5 @@ public partial class _Default : System.Web.UI.Page
     {
         Load += Page_Load;
     }
-    
+
 }
