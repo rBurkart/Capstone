@@ -31,11 +31,7 @@ public partial class _Default : System.Web.UI.Page
         Response.Redirect("Default.aspx", true);
     }
 
-    protected void btnAddItem_Click(object sender, EventArgs e)
-    {
-
-    }
-
+   
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
         if (!string.IsNullOrEmpty(txtName.Text))

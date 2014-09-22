@@ -36,7 +36,7 @@ public class CartItem
 
     public string Display()
     {
-        return Product.ProductName + " (" + Quantity.ToString() + " at " + Convert.ToString(Product.ProductCost) + " each";
+        return Product.ProductName + " (" + Quantity.ToString() +") " + " at " + Convert.ToString(Product.ProductCost) + " each";
 
     }
 

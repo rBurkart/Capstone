@@ -2,7 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+    <br /><br /><br />
+<div class="menu">
+           <asp:Label ID="lblTitle" runat="server" Text="CHOOSE A PRODUCT"></asp:Label>
+       </div>
 
+       <br />
 
 
 <asp:Label ID="Label1" runat="server"
@@ -26,6 +31,7 @@
         <table>
             <tr >
                 <td style="width: 250px; height: 22px">
+                    <span style="text-decoration: underline">Name:</span>
                     <asp:Label ID="lblName" runat="server" 
                         Font-Bold="False" Font-Size="Larger">
                     </asp:Label>
@@ -38,16 +44,19 @@
             </tr>
             <tr>
                 <td style="width: 250px">
+                    <span style="text-decoration: underline">Desc:</span>
                     <asp:Label ID="lblProductDesc" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td style="width: 250px">
+                    <span style="text-decoration: underline">SKU</span>:
                     <asp:Label ID="lblProductSKU" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td style="width: 250px">
+                    <span style="text-decoration: underline">Cost</span>:
                     <asp:Label ID="lblProductCost" runat="server" 
                         Font-Bold="True" Font-Size="Larger"></asp:Label>
                     <asp:Label ID="Label2" runat="server" Text="each" 

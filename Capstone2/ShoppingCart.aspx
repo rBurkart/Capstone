@@ -3,6 +3,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+    <br /><br /><br />
+<div class="menu">
+           <asp:Label ID="lblTitle" runat="server" Text="SHOPPING CART"></asp:Label>
+       </div>
+
+       <br />
 
     <%--<div>--%>
         <div>

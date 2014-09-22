@@ -2,12 +2,15 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+
 <br /><br />
-<div class="title">
-           <asp:Label ID="lblTitle" runat="server" Text="FORGOT PASSWORD?"></asp:Label>
+<div class="menu">
+           <asp:Label ID="lblTitle" runat="server" Text="FORGOT PASSWORD"></asp:Label>
        </div>
 
        <br />
+
+
 
 
 <%--it handles the error messages on the form--%>

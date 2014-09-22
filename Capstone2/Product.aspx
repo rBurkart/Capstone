@@ -3,12 +3,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <asp:Button ID="btnAddItem" runat="server" Text="Add to Cart" 
-        onclick="btnAddItem_Click" />
-
 <asp:ValidationSummary ID="ValidationSummary" Runat="server" ForeColor="Red" headertext="There were errors on the page:" />
 
-<br /><br />
+
 <div class="menu">
            <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
        </div>

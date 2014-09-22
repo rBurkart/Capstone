@@ -15,9 +15,9 @@
        <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
       
        <br />
-        <asp:LinkButton ID="lbtnLogin" runat="server" onclick="lbtnLogin_Click">LogIn</asp:LinkButton>
+        <asp:LinkButton ID="lbtnLogin" runat="server" CausesValidation="false" onclick="lbtnLogin_Click">LogIn</asp:LinkButton>
         
-        <asp:LinkButton ID="lbtnLogout" runat="server" onclick="lbtnLogout_Click">LogOut</asp:LinkButton>
+        <asp:LinkButton ID="lbtnLogout" runat="server" CausesValidation="false" onclick="lbtnLogout_Click">LogOut</asp:LinkButton>
         <br />
         <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
         <br /><br /><br />
