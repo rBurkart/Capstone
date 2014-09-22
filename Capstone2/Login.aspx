@@ -28,8 +28,7 @@
         
         <asp:RequiredFieldValidator ID="RFVtxtUsername" Runat="server" 
             controltovalidate="txtUsername"
-            errormessage="User ID is required.">* 
-        </asp:RequiredFieldValidator>
+            errormessage="User ID is required."></asp:RequiredFieldValidator>
 
             </td>
         </tr>
@@ -46,8 +45,7 @@
        
         <asp:RequiredFieldValidator ID="RFVtxtPassword" Runat="server" 
             controltovalidate="txtPassword"
-            errormessage="Password is required.">* 
-        </asp:RequiredFieldValidator>
+            errormessage="Password is required."></asp:RequiredFieldValidator>
 
             </td>
         </tr>

@@ -29,7 +29,7 @@
 
       </siteMapNode>
 
-      <siteMapNode url="" title="ADMIN"  description="Admin page">
+      <siteMapNode url="" title="ADMIN" roles="admin" description="Admin page">
 
         <siteMapNode url="~/Users.aspx?action=manage" title="Manage users"  description="Manage users page" />
         <siteMapNode url="~/Orders.aspx?action=manage" title="Manage orders"  description="Manage orders page" />

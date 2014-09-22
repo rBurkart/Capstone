@@ -20,6 +20,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 //this means we are logged in so hide the login button
                 lbtnLogin.Visible = false;
 
+                //Controls the menu based on Roles
+                MenuAdmin.Visible = true;
+                MenuUser.Visible = false;
+
+
                 //since we are logged in we can provide the link to logout
                 lbtnLogout.Visible = true;
 
@@ -38,6 +43,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 //Since we have not been authenticated, we have to provide
                 //a link to log in with
                 lbtnLogin.Visible = true;
+
+
+                //Controls the menu based on Roles
+                MenuAdmin.Visible = false;
+                MenuUser.Visible = true;
 
                 //hide logout button since user is not authenticated
                 lbtnLogout.Visible = false;

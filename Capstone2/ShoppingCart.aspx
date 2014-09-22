@@ -3,12 +3,20 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <br /><br /><br />
+    <br />
 <div class="menu">
-           <asp:Label ID="lblTitle" runat="server" Text="SHOPPING CART"></asp:Label>
-       </div>
+
+
+       <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/shopping-cart.png" 
+    Width="181px" Height="162px" />
+
+
+           <asp:Label ID="lblTitle" runat="server" Text="SHOPPING CART" 
+               style="font-size: xx-large"></asp:Label>
+       &nbsp;</div>
 
        <br />
+
 
     <%--<div>--%>
         <div>

@@ -24,13 +24,29 @@
        <div class="center">
         <asp:Menu ID="MenuAdmin" runat="server" 
             DataSourceID="SDMSProject" Orientation="Horizontal" 
-            StaticSubMenuIndent="16px" StaticDisplayLevels="2">
+            StaticSubMenuIndent="16px" StaticDisplayLevels="2" BackColor="#FFCCCC" 
+               Font-Bold="True" ForeColor="Black">
         </asp:Menu>  
 
 
         
 
        </div>
+
+        <asp:Menu ID="MenuUser" runat="server" 
+            DataSourceID="SDMSProject" Orientation="Horizontal" 
+            StaticSubMenuIndent="16px" StaticDisplayLevels="2" BackColor="#CCFFCC" 
+            BorderColor="#FF0066" Font-Bold="True" ForeColor="Black">
+        </asp:Menu>  
+
+
+        
+
+        <asp:Panel ID="Panel1" runat="server">
+        </asp:Panel>
+
+
+        
 
        <br /><br />
 
