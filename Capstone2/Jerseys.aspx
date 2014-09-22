@@ -37,7 +37,9 @@
                 </td>
             </tr>
             <tr>
+                
                 <td style="width: 250px">
+                <asp:Label ID="lblDesc" runat="server" Text="Description: "></asp:Label>
                     <asp:Label ID="lblProductDesc" runat="server"></asp:Label>
                 </td>
             </tr>
