@@ -19,7 +19,7 @@
                     <asp:Button ID="btnRemove" runat="server" 
                         Width="100px" Text="Remove Item" onclick="btnRemove_Click" /><br /><br />
                     <asp:Button ID="btnEmpty" runat="server" 
-                        Width="100px" Text="Empty Cart" />
+                        Width="100px" Text="Empty Cart" onclick="btnEmpty_Click1" />
                 </td>
             </tr>
         </table>

@@ -72,4 +72,8 @@ partial class Cart : System.Web.UI.Page
     {
         Response.Redirect("Order.aspx", true);
     }
+    protected void btnEmpty_Click1(object sender, EventArgs e)
+    {
+        lstCart.Items.Clear();
+    }
 }

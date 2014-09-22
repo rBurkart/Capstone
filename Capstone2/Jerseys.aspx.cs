@@ -88,4 +88,8 @@ public partial class _Default : System.Web.UI.Page
         Load += Page_Load;
     }
 
+    protected void btnCart_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShoppingCart.aspx");
+    }
 }
