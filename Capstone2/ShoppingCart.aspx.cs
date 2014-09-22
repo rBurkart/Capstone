@@ -39,7 +39,7 @@ partial class Cart : System.Web.UI.Page
         {
             CartEntry = CartEntry_loopVariable;
             CartItem = (CartItem)CartEntry.Value;
-            lstCart.Items.Add(CartItem.Display);
+            //lstCart.Items.Add(CartItem.Display);
         }
     }
 

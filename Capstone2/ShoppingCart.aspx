@@ -17,7 +17,7 @@
                 </td>
                 <td style="height: 153px">
                     <asp:Button ID="btnRemove" runat="server" 
-                        Width="100px" Text="Remove Item" /><br /><br />
+                        Width="100px" Text="Remove Item" onclick="btnRemove_Click" /><br /><br />
                     <asp:Button ID="btnEmpty" runat="server" 
                         Width="100px" Text="Empty Cart" />
                 </td>
