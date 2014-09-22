@@ -4,11 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 <div class="menu">
-           <br />
            <asp:Label ID="lblTitle" runat="server" Text="USERS"></asp:Label>
       </div>
 
-       <br />
 
 
     <asp:SqlDataSource ID="sdsUsers" runat="server" 

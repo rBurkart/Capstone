@@ -11,4 +11,12 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+    protected void lbtnSignup_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("User.aspx", false);
+    }
+    protected void lbtnLogin_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Login.aspx", false);
+    }
 }
