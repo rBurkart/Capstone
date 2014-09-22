@@ -57,11 +57,14 @@
                 <span style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 210);">
                 State:</span></td>
             <td style="width: 185px">
-                <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="188px" DataSourceID="SqlDataSource1" DataTextField="State_Name" DataValueField="State_Name">
+                <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="188px" 
+                    DataSourceID="SDSStates" DataTextField="State_Name" DataValueField="StateID">
                 </asp:DropDownList>
             </td>
             <td>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SPGetStateDdl" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SDSStates" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetStateDDL" 
+                    SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             </td>
         </tr>
         <tr>
