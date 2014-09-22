@@ -67,4 +67,8 @@ partial class Cart : System.Web.UI.Page
     {
         Load += Page_Load;
     }
+    protected void btnCheckOut_Click1(object sender, EventArgs e)
+    {
+        Response.Redirect("Order.aspx",true);
+    }
 }

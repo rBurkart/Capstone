@@ -25,8 +25,9 @@
         </table>
         <br />
         <asp:Button ID="btnContinue" runat="server"
-            PostBackUrl="~/Order.aspx" Text="Continue Shopping" />&nbsp;
-        <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" /><br />
+            PostBackUrl="~/Jerseys.aspx" Text="Continue Shopping" />&nbsp;
+        <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" 
+                onclick="btnCheckOut_Click1" /><br />
         <br />
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
     </div>

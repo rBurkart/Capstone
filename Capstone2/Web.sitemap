@@ -4,14 +4,14 @@
         <siteMapNode url="~/Jerseys.aspx" title="Jerseys" description="Jerseys page" />
 
       <siteMapNode url="" title="Teams"  description="Teams page">
-        <siteMapNode url="~/App_Themes/Argentina_Home.jpg" title="Argentina"  description="Teams page" />
-        <siteMapNode url="~/App_Themes/Belgium_Home.jpg" title="Belgium"  description="Teams page" />
-        <siteMapNode url="~/App_Themes/Brazil_Home.jpg" title="Brazil"  description="Teams page" />
-        <siteMapNode url="~/App_Themes/Colombia_Home.jpg" title="Colombia"  description="Teams page" />
-        <siteMapNode url="~/App_Themes/Costa_Rica_Home.jpg" title="Costa Rica"  description="Teams page" />
-        <siteMapNode url="~/App_Themes/France_Home.jpg" title="France"  description="Teams page" />
-        <siteMapNode url="~/App_Themes/Germany_Home.jpg" title="Germany"  description="Teams page" />
-        <siteMapNode url="~/App_Themes/Netherlands_Home.jpg" title="Netherlands"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=1" title="Argentina"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=2" title="Belgium"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=12" title="Brazil"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=14" title="Colombia"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=16" title="Costa Rica"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=18" title="France"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=20" title="Germany"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=22" title="Netherlands"  description="Teams page" />
         
       </siteMapNode>
       

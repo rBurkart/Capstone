@@ -22,10 +22,14 @@
         <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
         <br /><br /><br />
        <div class="center">
-        <asp:Menu ID="MenuProject" runat="server" 
+        <asp:Menu ID="MenuAdmin" runat="server" 
             DataSourceID="SDMSProject" Orientation="Horizontal" 
             StaticSubMenuIndent="16px" StaticDisplayLevels="2">
-        </asp:Menu>   
+        </asp:Menu>  
+
+
+        
+
        </div>
 
        <br /><br />
