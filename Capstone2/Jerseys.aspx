@@ -3,13 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 
+
+
 <asp:Label ID="Label1" runat="server"
             Text="Please select a product:"></asp:Label>
         
         
         <asp:DropDownList ID="ddlProducts" runat="server" 
         DataSourceID="SDSProductsDDL" DataTextField="ProductName" 
-        DataValueField="ProductID">
+        DataValueField="ProductID" AutoPostBack="True">
     </asp:DropDownList>
 
     <asp:SqlDataSource ID="SDSProductsDDL" runat="server" 
@@ -67,14 +69,14 @@
             ErrorMessage="Quantity must range from 1 to 500." 
             MaximumValue="500" MinimumValue="1" Type="Integer">
         </asp:RangeValidator><br /><br />
-        <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" />&nbsp;
+        <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" 
+        onclick="btnAdd_Click1" />&nbsp;
         <asp:Button ID="btnCart" runat="server" CausesValidation="False" 
             PostBackUrl="~/ShoppingCart.aspx" Text="Go to Cart" />
 
 
     
-
-
+   
 
 </asp:Content>
 

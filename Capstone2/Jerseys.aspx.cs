@@ -16,12 +16,12 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, System.EventArgs e)
     {
-        
+
         if (!IsPostBack)
         {
-         
+
             ddlProducts.DataBind();
-            
+
         }
         
         SelectedProduct = this.GetSelectedProduct();
@@ -48,16 +48,16 @@ public partial class _Default : System.Web.UI.Page
         return Product;
     }
 
-    protected void btnAdd_Click(object sender, System.EventArgs e)
+    protected void btnAdd_Click1(object sender, System.EventArgs e)
     {
-        if (Page.IsValid)
-        {
-            CartItem CartItem = new CartItem();
-            CartItem.Product = SelectedProduct;
-            CartItem.Quantity = Convert.ToInt32(txtQuantity.Text);
-            this.AddToCart(CartItem);
-            Response.Redirect("ShoppingCart.aspx");
-        }
+        //if (Page.IsValid)
+        //{
+        //    CartItem CartItem = new CartItem();
+        //    CartItem.Product = SelectedProduct;
+        //    CartItem.Quantity = Convert.ToInt32(txtQuantity.Text);
+        //    this.AddToCart(CartItem);
+        //    Response.Redirect("ShoppingCart.aspx");
+        //}
     }
 
     private void AddToCart(CartItem CartItem)
@@ -87,4 +87,5 @@ public partial class _Default : System.Web.UI.Page
     {
         Load += Page_Load;
     }
+    
 }
