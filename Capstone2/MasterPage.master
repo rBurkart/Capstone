@@ -25,7 +25,7 @@
         <asp:Menu ID="MenuAdmin" runat="server" 
             DataSourceID="SDMSProject" Orientation="Horizontal" 
             StaticSubMenuIndent="16px" StaticDisplayLevels="2" BackColor="#FFCCCC" 
-               Font-Bold="True" ForeColor="Black">
+               Font-Bold="True" ForeColor="Black" OnMenuItemDataBound="MenuAdmin_MenuItemDataBound">
         </asp:Menu>  
 
 

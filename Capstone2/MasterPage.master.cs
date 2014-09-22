@@ -21,8 +21,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 lbtnLogin.Visible = false;
 
                 //Controls the menu based on Roles
-                MenuAdmin.Visible = true;
-                MenuUser.Visible = false;
+                MenuAdmin.Visible = false;
+                MenuUser.Visible = true;
 
 
                 //since we are logged in we can provide the link to logout
@@ -46,8 +46,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
 
                 //Controls the menu based on Roles
-                MenuAdmin.Visible = false;
-                MenuUser.Visible = true;
+                MenuAdmin.Visible = true;
+                MenuUser.Visible = false;
 
                 //hide logout button since user is not authenticated
                 lbtnLogout.Visible = false;
@@ -70,6 +70,25 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Response.Cookies["UserEmail"].Value = null;
         Session["Role"] = null;
         Response.Redirect("~/Default.aspx");
+    }
+
+    protected void MenuAdmin_MenuItemDataBound(object sender, MenuEventArgs e)
+    {
+        SiteMapNode node = (SiteMapNode)e.Item.DataItem;
+        if (node["HideFromMenu"] == "true")
+    
+        {
+
+            if (e.Item.Parent != null)
+
+
+                e.Item.Parent.ChildItems.Remove(e.Item);
+
+            MenuAdmin.Items.Remove(e.Item);
+
+
+
+        }
     }
 
 }
