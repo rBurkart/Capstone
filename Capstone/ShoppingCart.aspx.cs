@@ -70,7 +70,14 @@ partial class Cart : System.Web.UI.Page
     }
     protected void btnCheckOut_Click1(object sender, EventArgs e)
     {
-        Response.Redirect("CheckOut.aspx", true);
+        if (lstCart.Items.Count > 0)
+        {
+            Response.Redirect("CheckOut.aspx", true);
+        }
+        else
+        {
+            lblMessage.Text = "Cart is Empty";
+        }
     }
     protected void btnEmpty_Click1(object sender, EventArgs e)
     {
