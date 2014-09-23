@@ -5,7 +5,8 @@
 
    <br /><br />
 <div class="menu">
-           <asp:Label ID="lblTitle" runat="server" Text="CHECKOUT"></asp:Label>
+           <asp:Image ID="Image1" runat="server" Height="147px" 
+               ImageUrl="~/App_Themes/checkout.jpg" Width="366px" />
        </div>
 
        <br />
@@ -89,9 +90,11 @@
             <td style="width: 419px">
                 &nbsp;</td>
             <td style="width: 477px">
-                <asp:Button ID="btnProceed" runat="server" Text="Proceed" />
+                <asp:Button ID="btnProceed" runat="server" onclick="btnProceed_Click" 
+                    Text="Proceed" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+                <asp:Button ID="btnCancel" runat="server" CausesValidation="false" onclick="btnCancel_Click" 
+                    Text="Cancel" />
             </td>
             <td>
                 &nbsp;</td>
@@ -100,23 +103,14 @@
             <td style="width: 419px">
                 &nbsp;</td>
             <td style="width: 477px">
-                &nbsp;</td>
+                <br />
+                <asp:Label ID="lblProceed" runat="server" Font-Bold="True" ForeColor="Black" 
+                    Text="Please wait... Processing..." style="font-size: x-large"></asp:Label>
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
     </table>
 
-       <br />
-
-    <br />
-
-    &nbsp;&nbsp;&nbsp;
-    <br />
-
-    <br />
-
-    <br />
-
-    
-    </asp:Content>
+</asp:Content>
 

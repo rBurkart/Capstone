@@ -9,6 +9,16 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        lblProceed.Text = "";
+        
+    }
 
+    protected void btnProceed_Click(object sender, EventArgs e)
+    {
+        lblProceed.Text = "Please wait... Processing...";
+    }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Jerseys.aspx");
     }
 }
