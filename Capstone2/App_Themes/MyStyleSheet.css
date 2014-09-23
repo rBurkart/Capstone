@@ -9,7 +9,7 @@ margin:0 auto;
 }
 
 table { margin: auto;
-    color: #FF0000;
+    color: black;
 }
 
 
@@ -32,6 +32,7 @@ font-style:normal;
  border-right: thin solid black;
  position:relative; 
  height:100%; 
+ color:black;
 }
 
 .header
