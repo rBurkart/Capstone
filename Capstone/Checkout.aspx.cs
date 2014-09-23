@@ -16,7 +16,6 @@ public partial class _Default : System.Web.UI.Page
     protected void btnProceed_Click(object sender, EventArgs e)
     {
         lblProceed.Text = "Please wait... Processing...";
-        Response.Redirect("Reciept.aspx");
     }
     protected void btnCancel_Click(object sender, EventArgs e)
     {
