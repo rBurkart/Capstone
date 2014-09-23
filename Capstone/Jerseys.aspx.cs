@@ -19,13 +19,15 @@ public partial class _Default : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-
+            // Method that establishes a connection with the ddlProducts and their child elements
             ddlProducts.DataBind();
 
         }
 
+        //calls SelectedProduct function
         SelectedProduct = this.GetSelectedProduct();
 
+        //Child elements of DDL
         lblName.Text = SelectedProduct.ProductName;
         lblProductDesc.Text = SelectedProduct.ProductDesc;
         lblProductSKU.Text = SelectedProduct.ProductSKU;
@@ -35,9 +37,16 @@ public partial class _Default : System.Web.UI.Page
 
     private Product GetSelectedProduct()
     {
+        //Retrieves and displays the records binded to the DDL
         DataView dvProduct = (DataView)SDSProductsDDL.Select(DataSourceSelectArguments.Empty);
+
+        //Filters rows in ddlProducts by the ProductID
         dvProduct.RowFilter = "ProductID = '" + ddlProducts.SelectedValue + "'";
+
+        //Instantiates a new product object
         Product Product = new Product();
+
+        // Displays properties of the selected product
         Product.ProductID = dvProduct[0]["ProductID"].ToString();
         Product.ProductName = dvProduct[0]["ProductName"].ToString();
         Product.ProductDesc = dvProduct[0]["ProductDesc"].ToString();
@@ -48,7 +57,8 @@ public partial class _Default : System.Web.UI.Page
         return Product;
     }
 
-    protected void btnAdd_Click1(object sender, System.EventArgs e)
+    // Adds item to cart
+    protected void btnAdd_Click(object sender, System.EventArgs e)
     {
         if (Page.IsValid)
         {
@@ -60,8 +70,10 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
+
     private void AddToCart(CartItem CartItem)
     {
+        
         SortedList Cart = GetCart();
         string sProductID = SelectedProduct.ProductID;
         if (Cart.ContainsKey(sProductID))

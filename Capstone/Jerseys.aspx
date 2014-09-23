@@ -79,7 +79,7 @@
             MaximumValue="500" MinimumValue="1" Type="Integer">
         </asp:RangeValidator><br /><br />
         <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" 
-        onclick="btnAdd_Click1" />&nbsp;
+        onclick="btnAdd_Click" />&nbsp;
         <asp:Button ID="btnCart" runat="server" CausesValidation="False" 
             PostBackUrl="~/ShoppingCart.aspx" Text="Go to Cart" 
         onclick="btnCart_Click" />
