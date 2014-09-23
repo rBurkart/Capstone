@@ -21,4 +21,11 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("Jerseys.aspx");
     }
+    protected void cbBillingAdd_CheckedChanged(object sender, EventArgs e)
+    {
+        if (cbBillingAdd.Checked)
+        {
+            txtBillingAdd.Text = txtShippingAdd.Text;
+        }
+    }
 }

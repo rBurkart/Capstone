@@ -73,6 +73,7 @@ public partial class _Default : System.Web.UI.Page
         {
             Cart.Add(sProductID, CartItem);
         }
+        txtQuantity.Text = "";
     }
 
     private SortedList GetCart()

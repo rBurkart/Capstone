@@ -61,8 +61,8 @@
             </td>
             <td style="width: 477px">
     <asp:TextBox ID="txtBillingAdd" runat="server" Width="251px"></asp:TextBox>
-    <asp:CheckBox ID="cbBillingAdd" runat="server" Text="Same as Shipping Address? " 
-                    ForeColor="Black" />
+    <asp:CheckBox ID="cbBillingAdd" runat="server" Text="Same as Shipping Address?" CausesValidation="false" AutoPostBack="true" 
+                    ForeColor="Black" oncheckedchanged="cbBillingAdd_CheckedChanged" />
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
