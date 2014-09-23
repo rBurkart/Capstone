@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <br /><br /><br />
+    <br /><br />
 <div class="menu">
            <asp:Label ID="lblTitle" runat="server" Text="CHOOSE A PRODUCT"></asp:Label>
        </div>

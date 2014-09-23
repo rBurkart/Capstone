@@ -11,4 +11,16 @@ public partial class Help : System.Web.UI.Page
     {
 
     }
+    protected void LinkHelp1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://www.ebay.com/gds/How-To-Use-The-New-eBay-Shopping-Cart-/10000000053585339/g.html");
+    }
+    protected void LinkButton2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://www.macworld.com/article/1156341/open_websites_login_startup.html");
+    }
+    protected void LinkButton3_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://www.wikihow.com/Shop-Online-Safely");
+    }
 }

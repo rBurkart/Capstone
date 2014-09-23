@@ -9,50 +9,50 @@
        </div>
 
        <br />
-    <br />
+<br />
 
 
 <%--Required field validator for Username--%>
-    <table style="width: 100%">
-        <tr>
-            <td style="text-align: right; width: 370px">
-                <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label>
+<table style="width: 100%">
+    <tr>
+        <td style="text-align: right; width: 370px">
+            <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label>
             </td>
-            <td style="width: 242px">
+        <td style="width: 242px">
         
         <asp:TextBox ID="txtUsername" MaxLength="20" runat="server" Width="203px"></asp:TextBox>
         
 
-            </td>
-            <td>
+        </td>
+        <td>
         
         <asp:RequiredFieldValidator ID="RFVtxtUsername" Runat="server" 
             controltovalidate="txtUsername"
             errormessage="User ID is required."></asp:RequiredFieldValidator>
 
             </td>
-        </tr>
-        <tr>
-            <td style="text-align: right; width: 370px">
+    </tr>
+    <tr>
+        <td style="text-align: right; width: 370px">
 
         <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
             </td>
-            <td style="width: 242px">
+        <td style="width: 242px">
         <asp:TextBox ID="txtPassword" type="password" MaxLength="10" runat="server" 
-                    Width="203px"></asp:TextBox>
-            </td>
-            <td>
+                Width="203px"></asp:TextBox>
+        </td>
+        <td>
        
         <asp:RequiredFieldValidator ID="RFVtxtPassword" Runat="server" 
             controltovalidate="txtPassword"
             errormessage="Password is required."></asp:RequiredFieldValidator>
 
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 370px">
-                &nbsp;</td>
-            <td style="width: 242px">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 370px">
+            &nbsp;</td>
+        <td style="width: 242px">
 
             <asp:Button ID="btnLogin" runat="server" Text="Login" 
     onclick="btnLogin_Click" />
@@ -61,29 +61,29 @@
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" 
             CausesValidation="false" onclick="btnCancel_Click" />
             </td>
-            <td>
+        <td>
 
 
 
-            <asp:LinkButton ID="lbtnForgotPass" runat="server">Forgot Password?</asp:LinkButton>
+            <asp:LinkButton ID="lbtnForgotPass" CausesValidation="false" runat="server">Forgot Password?</asp:LinkButton>
 
     
        
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 370px">
-                &nbsp;</td>
-            <td style="width: 242px">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 370px">
+            &nbsp;</td>
+        <td style="width: 242px">
 <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
             </td>
-            <td>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/soccer_ball.jpg" 
-                    Width="100px" />
-            </td>
-        </tr>
-    </table>
-    <br />
+        <td>
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/soccer_ball.jpg" 
+                Width="100px" />
+        </td>
+    </tr>
+</table>
+<br />
 
 
  <%-----------%> 
