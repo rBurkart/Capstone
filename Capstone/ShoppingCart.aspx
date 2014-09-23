@@ -41,7 +41,7 @@
         <asp:Button ID="btnContinue" runat="server"
             PostBackUrl="~/Jerseys.aspx" Text="Continue Shopping" />&nbsp;
         <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" 
-                onclick="btnCheckOut_Click1" /><br />
+                onclick="btnCheckOut_Click" /><br />
         <br />
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
     </div>
