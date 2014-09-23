@@ -1,108 +1,156 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Product.aspx.cs" Inherits="Products" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Product.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<div>
-      <h2 style="color: white">Team Info</h2>
-    <asp:Image ID="Image" runat="server" />
-    <div id="Jersey">
-    &nbsp&nbsp&nbsp Team:
-    <asp:Label ID="lblTeam" runat="server" Text="" />
+    <asp:ValidationSummary ID="ValidationSummary" Runat="server" ForeColor="Red" headertext="There were errors on the page:" />
+
+
+<div class="menu">
+           <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
+       </div>
+
+       <br />
+
+
+
+    <table style="margin:auto border:1px solid blue; width:25%; padding: 50px">
+      <tr>        
+                 <%--Required field validator for Name--%> 
+       
+                <asp:RequiredFieldValidator ID="RFVtxtName" Runat="server" 
+                controltovalidate="txtName"
+                errormessage="Name is required.">* 
+                </asp:RequiredFieldValidator>
+
+                
+                <td align="right" >
+                    <asp:Label ID="lblName" runat="server" Text="Name: "></asp:Label>
+                </td>
+                <td align="left">
+                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                &nbsp;
+                </td>
+      </tr>  
+
+      <tr>
+                
+                <asp:RequiredFieldValidator ID="RFVDescription" Runat="server" 
+                controltovalidate="txtDescription"
+                errormessage="Description is required.">* 
+                </asp:RequiredFieldValidator>
+                
+                <td align="right" >
+                <asp:Label ID="lblDescription" runat="server" Text="Description: "></asp:Label>
+                </td>
+                <td align="left">
+                <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                &nbsp;
+                </td>
+      </tr>
+
+      <tr>
+                <asp:RequiredFieldValidator ID="RFVSku" Runat="server" 
+                controltovalidate="txtSKU"
+                errormessage="SKU is required.">* 
+                </asp:RequiredFieldValidator>
+                
+                <td align="right" >
+                <asp:Label ID="lblSKU" runat="server" Text="SKU: "></asp:Label>
+                </td>
+                <td align="left">
+                <asp:TextBox ID="txtSKU" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                &nbsp;
+                </td>
+      </tr>
+
+      <tr>
+                <asp:RequiredFieldValidator ID="rfvTeam" Runat="server" 
+                controltovalidate="ddlTeam"
+                errormessage="Team is required.">* 
+                </asp:RequiredFieldValidator>
+                
+                <td align="right" >
+                <asp:Label ID="lblTeam" runat="server" Text="Team:"></asp:Label>
+                </td>
+                <td align="left">   
+                    <asp:DropDownList ID="ddlTeam" runat="server" DataSourceID="sdsTeam" DataTextField="CountryName" DataValueField="TeamID">
+                    <%--<asp:ListItem Text="Cat 1" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="Cat 2" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="Cat 3" Value="3"></asp:ListItem>--%>
+                    </asp:DropDownList>
+                </td>
+                <td>
+                &nbsp;
+                </td>
+       </tr>    
+
+             <tr>
+                <asp:RequiredFieldValidator ID="rfvPrice" Runat="server" 
+                controltovalidate="txtPrice"
+                errormessage="Price is required.">* 
+                </asp:RequiredFieldValidator>
+                
+                <td align="right" >
+                <asp:Label ID="lblPrice" runat="server" Text="Price: "></asp:Label>
+                </td>
+                <td align="left">
+                <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                &nbsp;
+                </td>
+      </tr>
+
+       <tr>
+                               
+                <td align="right" >
+                <asp:Label ID="lblIsActive" runat="server" Text="Is Active:"></asp:Label>
+                </td>
+                <td align="left">   
+                    <%--<asp:ListItem Text="Cat 1" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="Cat 2" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="Cat 3" Value="3"></asp:ListItem>--%>
+                    <asp:RadioButtonList ID="rblIsActive" runat="server">
+                        <asp:ListItem Value="False">No</asp:ListItem>
+                        <asp:ListItem Value="True">Yes</asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
+                <td>
+                &nbsp;
+                </td>
+       </tr>
+                
+       <tr>     <td align="right" >
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" 
+                    onclick="btnUpdate_Click" />
+                </td>
+                <td align="left">
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" 
+                        onclick="btnCancel_Click" />
+                </td>
+                <td>
+                &nbsp;
+                </td>
+       </tr> 
+
+    </table>
+
+    <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
+
     <br />
-        <br />
-    &nbsp&nbsp&nbsp Description:
-    <asp:Label ID="lblDesc" runat="server" Text="" />
-    <br />
-        <br />
-    &nbsp&nbsp&nbsp ProductSKU:
-    <asp:Label ID="lblSKU" runat="server" Text="" />
-    <br />
-        <br />
-    &nbsp&nbsp&nbsp Product Cost:
-    <asp:Label ID="lblCost" runat="server" Text="" /><br /><br />
+
+    <asp:SqlDataSource ID="sdsTeam" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:cs %>" 
+                    SelectCommand="spGetActiveTeamsDDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
    
-    
-    <asp:Label ID="lblId" runat="server" Text="" Visible="false" />
-
-    <asp:HyperLink ID="GoBack" NavigateUrl="~/Home.aspx" Text="Return To Home Page?" runat="server"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <%-- <div style="padding-bottom:10px">   <asp:Image ID="JerseyImage" runat="server" /> </div>
-    <br />
-    <a>
-    <asp:TextBox ID="txtDescription" runat="server" Height="70px" TextMode="MultiLine"  
-        Width="296px" MaxLength="255">Description:</asp:TextBox></a>
-    <br />
-    <asp:Label ID="lblProduct" runat="server" Text="Argentina Jersey"  ></asp:Label>
-    <br />
-    <asp:RadioButtonList ID="rblHomeAway" runat="server" RepeatDirection="Horizontal">
-        <asp:ListItem Text="Home" Value="1" />
-        <asp:ListItem Text="Away" Value="2" />
-    </asp:RadioButtonList>
-    <br />    
-    <asp:DropDownList ID="ddlPlayer" runat="server">
-        <asp:ListItem Text="Player1" Value="1" />
-        <asp:ListItem Text="Player2" Value="2" />
-    </asp:DropDownList>
-    <br />
-    <asp:RadioButtonList ID="rblSize" runat="server" Width="61px" RepeatDirection="Horizontal">
-        <asp:ListItem Text="S" Value="1" /> <asp:ListItem Text="M" Value="2" />
-        <asp:ListItem Text="L" Value="3" />
-        <asp:ListItem Text="XL" Value="4" />
-    </asp:RadioButtonList>
-    <br />
-    <asp:RadioButtonList ID="rblGender" runat="server" RepeatDirection="Horizontal">
-        <asp:ListItem Text="Male" Value="1" />
-        <asp:ListItem Text="Female" Value="2" />
-    </asp:RadioButtonList>
-    <br />
-    <asp:DropDownList ID="ddlQuantity" runat="server">
-        <asp:ListItem Text="1" Value="1" />
-        <asp:ListItem Text="2" Value="2" />
-        <asp:ListItem Text="3" Value="3" />
-        <asp:ListItem Text="4" Value="4" />
-        <asp:ListItem Text="5" Value="5" />
-    </asp:DropDownList>
-
-    <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" />--%>
-
-</div>
+  
 
 </asp:Content>
+

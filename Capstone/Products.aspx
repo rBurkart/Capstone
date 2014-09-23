@@ -1,60 +1,46 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Products.aspx.cs" Inherits="Product" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Products.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h1 style="text-align:center">
-        <asp:Label ID="Label1" CssClass="position-center" runat="server" Text="SELECT A TEAM"></asp:Label>
-    </h1>
 
-    
-
-    <%--<div style="text-align:center">
-        
-        
-        <asp:ImageButton ID="btnImageArgentine" runat="server"
-        ImageUrl="~/images/Argentina_Home.jpg"  Height="198px" Width="228px" 
-            onclick="btnImgOn_Click" />
-        
-
-        <asp:ImageButton ID="imgBelgium" runat="server" 
-        ImageUrl="~/images/Belgium_Home.jpg" Height="198px" Width="228px"
-        onclick="btnImgOn_Click" />
-        
-
-        <asp:ImageButton ID="imgBrazil" runat="server" 
-        ImageUrl="~/images/Brazil_Home.jpg" Height="198px" Width="228px"
-        onclick="btnImgOn_Click" />
-        
-
-        <asp:ImageButton ID="imgColombia" runat="server" 
-        ImageUrl="~/images/Colombia_Home.jpg" Height="198px" Width="228px"
-        onclick="btnImgOn_Click" />
-        
-
-        <asp:ImageButton ID="imgCostaRica" runat="server" 
-        ImageUrl="~/images/Costa_Rica_Home.jpg" Height="198px" Width="228px"
-        onclick="btnImgOn_Click" />
+<asp:SqlDataSource ID="sdsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="spGetProductGrid" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
 
-        <asp:ImageButton ID="imgFrance" runat="server" 
-        ImageUrl="~/images/France_Home.jpg" Height="198px" Width="228px"
-        onclick="btnImgOn_Click" />
+<div class="menu">
+            <br />
+           <asp:Label ID="lblTitle" runat="server" Text="PRODUCTS"></asp:Label>
+      </div>
 
-        <asp:ImageButton ID="imgGermany" runat="server" 
-        ImageUrl="~/images/Germany_Home.jpg" Height="198px" Width="228px"
-        onclick="btnImgOn_Click" />
+       <br />
 
-        <asp:ImageButton ID="imgNetherlands" runat="server" 
-        ImageUrl="~/images/Netherlands_Home.jpg" Height="198px" Width="228px"
-        onclick="btnImgOn_Click" />
+       <div class="content">
+    <asp:GridView ID="gvProducts" runat="server" AutoGenerateColumns="False" 
+        DataKeyNames="ProductID" DataSourceID="sdsProducts">
+        <Columns>
 
-        <br />
-        
-</div>--%>
+        <asp:HyperLinkField DataNavigateUrlFields="ProductID" 
+            DataNavigateUrlFormatString="~/Product.aspx?id={0}" DataTextField="ProductName" 
+            HeaderText="Products" SortExpression="ProductCost" />
+
+            <asp:BoundField DataField="ProductID" HeaderText="ProductID" 
+                InsertVisible="False" ReadOnly="True" SortExpression="ProductID" />
+            <asp:BoundField DataField="TeamID" HeaderText="TeamID" 
+                SortExpression="TeamID" />
+            <asp:BoundField DataField="ProductName" HeaderText="ProductName" 
+                SortExpression="ProductName" />
+                <asp:BoundField DataField="ProductDesc" HeaderText="ProductDesc" 
+                SortExpression="ProductDesc" />
+            <asp:BoundField DataField="ProductSKU" HeaderText="ProductSKU" 
+                SortExpression="ProductSKU" />
+            <asp:BoundField DataField="ProductCost" HeaderText="ProductCost" 
+                SortExpression="ProductCost" />
+            <asp:CheckBoxField DataField="ProductIsActive" HeaderText="ProductIsActive" 
+                SortExpression="ProductIsActive" />
+        </Columns>
+    </asp:GridView>
+    </div>
+
+    <asp:LinkButton ID="lbtnAddProduct" runat="server" onclick="lbtnAddUser_Click">Add new Product</asp:LinkButton>
 
 </asp:Content>
-
-
-
 

@@ -5,88 +5,78 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Capstone Project</title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
     <link type="text/css" rel="Stylesheet" href="~/App_Themes/MyStyleSheet.css" />
-    <style type="text/css">
-        .style1
-        {
-            font-family: "Berlin Sans FB";
-            color: #FFFFFF;
-        }
-        </style>
 </head>
+
 
 <body>
     <form id="form1" runat="server">
-    <div id="content">
-    
-            <asp:Label ID="lblGreeting" runat="server" style="color: #663300"></asp:Label>
-            <br />
-
-            <asp:LinkButton ID="lbtnLogin" runat="server" Text="Log In" 
-            onclick="lbtnLogin_Click" CssClass="style1" BackColor="#003300" 
-                Font-Bold="True"></asp:LinkButton>  
-            <asp:LinkButton ID="lbtnLogout" runat="server" Text="Log Out" 
-            CausesValidation="false" onclick="lbtnLogout_Click" CssClass="style1" 
-                BackColor="#003300" Font-Bold="True"></asp:LinkButton>
-
-    <%--Adds a banner to the header of the page--%>
+    <div class="content">
+       <asp:Image ID="imgHeader" runat="server" ImageUrl="~/App_Themes/capstone_banner.jpg"  />
+      
+       <br />
+        <asp:LinkButton ID="lbtnLogin" runat="server" CausesValidation="false" onclick="lbtnLogin_Click">LogIn</asp:LinkButton>
         
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:LinkButton ID="lbtnLogout" runat="server" CausesValidation="false" onclick="lbtnLogout_Click">LogOut</asp:LinkButton>
+        <br />
+        <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
+        <br /><br /><br />
+       <div class="center">
+        <asp:Menu ID="MenuAdmin" runat="server" 
+            DataSourceID="SDMSProject" Orientation="Horizontal" 
+            StaticSubMenuIndent="16px" StaticDisplayLevels="2" BackColor="#FFCCCC" 
+               Font-Bold="True" ForeColor="Black" OnMenuItemDataBound="MenuAdmin_MenuItemDataBound">
+        </asp:Menu>  
+
+
         
-           <asp:Image ID="imgHeader" runat="server" 
-                ImageUrl="~/App_Themes/capstone_banner.jpg" Width="1055px" 
-                Height="101px" style="font-family: 'Berlin Sans FB'"  />
 
-            <br />
-            <br />
+       </div>
 
-            <div id="center"> 
-            <asp:Menu ID="Menu1" runat="server" DataSourceID="sdsMainNav" 
-                Orientation="Horizontal" StaticDisplayLevels="2" BackColor="DarkGreen" 
-                DynamicHorizontalOffset="2" Font-Names="Berlin Sans FB" Font-Size="0.8em" 
-                ForeColor="White" StaticSubMenuIndent="10px" 
-                style="text-align: right; font-size: xx-large; "  > 
+        <asp:Menu ID="MenuUser" runat="server" 
+            DataSourceID="SDMSProject" Orientation="Horizontal" 
+            StaticSubMenuIndent="16px" StaticDisplayLevels="2" BackColor="#CCFFCC" 
+            BorderColor="#FF0066" Font-Bold="True" ForeColor="Black">
+        </asp:Menu>  
 
-          <DynamicHoverStyle BackColor="maroon" ForeColor="White" />
-          <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-          <DynamicMenuStyle BackColor="DarkGreen" />
-          <DynamicSelectedStyle BackColor="DarkGreen" />
 
-          <StaticHoverStyle BackColor="#990000" ForeColor="White" />
-          <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-          <StaticSelectedStyle BackColor="green" />
+        
 
-        </asp:Menu>
-        </div>
+        <asp:Panel ID="Panel1" runat="server">
+        </asp:Panel>
 
-       
-        <br /><br /><br /><br /><br /><br />
+
+        
+
+       <br /><br />
+
 
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <asp:SiteMapPath ID="SiteMapPath1" runat="server" BackColor="#003300" 
-                DynamicHorizontalOffset="2" Font-Names="Berlin Sans FB" Font-Size="1em" 
-                ForeColor="white" StaticSubMenuIndent="10px" >
-            <CurrentNodeStyle ForeColor="White" />
-            <NodeStyle ForeColor="White" />
-            <RootNodeStyle BackColor="#003300" ForeColor="White" />
-          </asp:SiteMapPath>
-             
-        <br />        
-        <%--Footer of the page--%>
-             
-          <asp:SiteMapDataSource ID="sdsMainNav" runat="server"  />
-
         
+        </asp:ContentPlaceHolder>
+
+
+        <br /> <br /> <br /> <br /> <br />
+        
+
+         <%--Site Map of the page--%>
+        <asp:SiteMapPath ID="SiteMapCProject" runat="server" Font-Names="Book Antiqua" 
+            Font-Size="1em" PathSeparator=" > ">
+            <CurrentNodeStyle ForeColor="Purple" />
+            <NodeStyle Font-Bold="True" ForeColor="Purple" />
+            <PathSeparatorStyle Font-Bold="True"  ForeColor="Purple" />
+            <RootNodeStyle Font-Bold="True" ForeColor="Purple" />
+        </asp:SiteMapPath>
+
+
+        <asp:SiteMapDataSource ID="SDMSProject" runat="server" />
+
+        <br /> <br /> <br /> <br /> <br />
+
+        <%--Footer of the page--%>
+        <div class="footer">&nbsp;</div>
+
+
     </div>
     </form>
 </body>

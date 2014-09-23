@@ -1,64 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Configuration;
-
-
-public partial class Login : System.Web.UI.Page
+using System.Web.Security;
+public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        lblMessage.Visible = false;
     }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx", true);
+    }
+
+
     protected void btnLogin_Click(object sender, EventArgs e)
     {
-        SqlConnection conn = new SqlConnection();
 
-        string strConn = "Server = sql.neit.edu; Database = se265_jerseyshop; User Id = tedelman; Password = neit2014;";
-        conn.ConnectionString = strConn;
-        conn.Open();
-        string checkUser = "select count(*) from Users where UserName='" + txtUserName.Text + "'";
-        SqlCommand com = new SqlCommand(checkUser, conn);
-        int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
-        conn.Close();
+        //Activate the message if login is failed
+        lblMessage.Visible = true;
+        
+        AppSecurity temp =  new AppSecurity();
 
-        if (temp == 1)
-        {
-            conn.Open();
-            string checkPasswordQuery = "select UserPassword from Users where UserPassword= '" + txtPassword.Text + "'";
-            SqlCommand passComm = new SqlCommand(checkPasswordQuery, conn);
-            string UserPassword = passComm.ExecuteScalar().ToString().Replace(" ", "");
-            if (UserPassword == txtPassword.Text)
+        temp = AppSecurity.login(txtUsername.Text, txtPassword.Text);
+
+        if (!string.IsNullOrEmpty(txtUsername.Text) & !string.IsNullOrEmpty(txtPassword.Text))
             {
-                Session["New"] = txtUserName.Text;
-                Response.Write("Password is correct");
-                Response.Redirect("Products.aspx");
-                
+
+                //set string value to class function that returns string
+                temp = AppSecurity.login(txtUsername.Text.Trim(), txtPassword.Text.Trim());
             }
 
             else
             {
-                Response.Write("Password is not valid");
+                lblMessage.Text = temp.ErrorLogin.ToString();
+                return;
             }
 
-        }
+        if (temp.UserId > 0)
+        {
 
+            // Use .NET built in security system to set the UserID 
+            //within a client-side Cookie
+            FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(temp.UserId.ToString(), false, 480);
+
+            //For security reasons we may hash the cookies
+            string encrytpedTicket = FormsAuthentication.Encrypt(ticket);
+
+            HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrytpedTicket);
+            Response.Cookies.Add(cookie);
+
+            //set the username to a client side cookie for future reference
+            HttpCookie MyCookie = new HttpCookie("UserEmail");
+            DateTime now = DateTime.Now;
+
+            MyCookie.Value = temp.UserEmail.ToString();
+            MyCookie.Expires = now.AddDays(1);
+            Response.Cookies.Add(MyCookie);
+
+            //set the userrole to a session variable for future reference
+            Session["Role"] = temp.UserRole.ToString();
+
+            // Redirect browser back to home page
+            Response.Redirect("~/Default.aspx");
+        }
         else
         {
-            Response.Write("Password is not valid");
+            //or else display the failed login message
+            lblMessage.Text = "Login Failed!";
         }
-
     }
-    protected void txtPassword_TextChanged(object sender, EventArgs e)
+    protected void lbtnForgotPass_Click(object sender, EventArgs e)
     {
-
-    }
-    protected void btnSignup_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Home.aspx");
+        Response.Redirect("~/ForgotPassword.aspx");
     }
 }

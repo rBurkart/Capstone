@@ -1,24 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode url="~/Home.aspx" title="Home" description="Return to Our Home Page">
+    <siteMapNode url="~/Default.aspx" title="HOME"  description="Home page">
+        <siteMapNode url="~/Jerseys.aspx" title="JERSEYS" description="Jerseys page" />
 
-    <siteMapNode url="~/Products.aspx" title="Products" description="Products">
+      <siteMapNode url="" title="TEAMS"  description="Teams page">
+        <siteMapNode url="~/Jerseys.aspx?id=1" title="Argentina"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=2" title="Belgium"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=12" title="Brazil"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=14" title="Colombia"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=16" title="Costa Rica"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=18" title="France"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=20" title="Germany"  description="Teams page" />
+        <siteMapNode url="~/Jerseys.aspx?id=22" title="Netherlands"  description="Teams page" />
+        
+      </siteMapNode>
+      
+        <siteMapNode url="~/Search.aspx" title="SEARCH"  description="Search page" />
+        <siteMapNode url="~/ShoppingCart.aspx" title="VIEW CART"  description="View Car page" />
+        <siteMapNode url="~/About.aspx" title="ABOUT"  description="About page" />
+        <siteMapNode url="~/Contact.aspx" title="CONTACT"  description="Contact page" />
+        <siteMapNode url="~/Help.aspx" title="HELP"  description="Help page" />
+        
+      <siteMapNode url="" title="MY ACCOUNT"  description="Account page">
+
+        <siteMapNode url="~/User.aspx" title="My profile"  description="My profile page" />
+        <siteMapNode url="~/Order.aspx" title="My orders"  description="My orders page" />
+        <siteMapNode url="~/ForgotPassword.aspx" title="Change Password"  description="Forgot password page" />
+
+      </siteMapNode>
+
+      <siteMapNode url="" title="ADMIN" roles="admin" description="Admin page" HideFromMenu="true">
+
+        <siteMapNode url="~/Users.aspx?action=manage" title="Manage users"  description="Manage users page" />
+        <siteMapNode url="~/Orders.aspx?action=manage" title="Manage orders"  description="Manage orders page" />
+        <siteMapNode url="~/Products.aspx?action=manage" title="Manage products"  description="Manage products page" />
+        <siteMapNode url="~/Categories.aspx?action=manage" title="Manage teams"  description="Manage team page" />
+
+      </siteMapNode>
+      
     </siteMapNode>
-
-    <siteMapNode url="" title="My Account" description="Account">
-      <siteMapNode url="~/Login.aspx" title="Login" description="Login Page" />
-      <siteMapNode url="~/Signup.aspx" title="Signup" description="Signup Page" />
-      <siteMapNode url="~/User.aspx" title="User" description="User Page" />
-      <siteMapNode url="~/Orders.aspx" title="Orders" description="Orders Page" />
-    </siteMapNode>
-
-    <siteMapNode url="" title="Admin" description="Administration">
-      <siteMapNode url="~/Users.aspx" title="Manage Users" description="Manage Users" />
-      <siteMapNode url="~/Orders.aspx?action=manage" title="Manage Orders" description="Manage Orders" />
-      <siteMapNode url="~/Products.aspx?action=manage" title="Manage Products" description="Manage Products" />
-    </siteMapNode>
-    
-
-  </siteMapNode>
-
 </siteMap>

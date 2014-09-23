@@ -4,47 +4,63 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Data;
 
-
-
-public partial class Products : System.Web.UI.Page
+public partial class _Default : System.Web.UI.Page
 {
-
-    
     protected void Page_Load(object sender, EventArgs e)
     {
-        string ProductID;
-        if (Request.QueryString["id"] != null)
+        if (!IsPostBack)
         {
-            ProductID = Request.QueryString["id"].ToString();
-            int intProductID = Convert.ToInt32(ProductID);
-
-            Jersey temp = new Jersey();
-            // creates a new instance of the student
-
-            SqlDataReader dr = temp.FindOneJersey(intProductID);
-            // stores the instance in a data reader that has the unique id passed to it upon initialization
-
-
-            while (dr.Read()) //loops through the record to display in the text fields
+            if (!string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-
-                
-                lblTeam.Text = dr["ProductName"].ToString();
-                lblDesc.Text = dr["ProductDesc"].ToString();
-                lblSKU.Text = dr["ProductSKU"].ToString();
-                lblCost.Text = dr["ProductCost"].ToString();
-                Image.ImageUrl = "~/images/" + dr["Picture"].ToString();
-                lblId.Text = dr["ProductID"].ToString();
-                //the above code block puts appropriate data into its specified text field
+                Pro p = new Pro();
+                p = Pro.Fetch(Convert.ToInt32(Request.QueryString["id"].ToString()));
+                txtName.Text = p.ProductName;
+                txtDescription.Text = p.ProductDesc;
+                txtSKU.Text = p.ProductSKU;
+                ddlTeam.SelectedIndex = p.TeamID;
+                txtPrice.Text = p.ProductCost.ToString();
+                rblIsActive.SelectedValue = p.ProductIsActive.ToString();
             }
         }
-        else
+        lblError.Visible = false;
+        
+    }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx", true);
+    }
+
+   
+    protected void btnUpdate_Click(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(txtName.Text))
         {
-            Response.Redirect("User.aspx");
+            Pro p = new Pro();
+            if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+            {
+                p.ProductID = Convert.ToInt32(Request.QueryString["id"].ToString());
+            }
+            else
+            {
+                p.ProductID = 0;
+            }
+            p.ProductName = txtName.Text;
+            p.ProductDesc = txtDescription.Text;
+            p.ProductSKU = txtSKU.Text;
+            p.TeamID = ddlTeam.SelectedIndex;
+            p.ProductCost = Convert.ToDecimal(txtPrice.Text);
+            p.ProductIsActive = Convert.ToBoolean(rblIsActive.SelectedValue.ToString());
+
+            if (Pro.Save(p))
+            {
+                Response.Redirect("~/Products.aspx");
+            }
+            else
+            {
+                lblError.Text = "Error saving record.";
+            }
+
         }
-    }   
-    
+    }
 }
